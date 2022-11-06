@@ -125,5 +125,26 @@ namespace ArqStudio.Repository
             }
             return ob;
         }
+
+        public Objeto GetProfissional(int id)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = $"Select idProfissional as Id, Nome from Cliente where IdProfissional = {id}";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            Objeto ob = new Objeto();
+
+            if (dr.Read())
+            {
+                ob.Id = int.Parse(dr[0].ToString());
+                ob.Nome = dr[1].ToString();
+            }
+            return ob;
+        }
     }
 }

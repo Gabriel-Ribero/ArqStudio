@@ -29,5 +29,17 @@ namespace ArqStudio.View
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

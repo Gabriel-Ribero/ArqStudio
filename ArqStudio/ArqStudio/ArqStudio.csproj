@@ -62,8 +62,21 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Avaliacao.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\IAvaliacao.cs" />
+    <Compile Include="Model\Objeto.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RAvaliacao.cs" />
+    <Compile Include="View\Avaliação\frmAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avaliação\frmAvaliacao.Designer.cs">
+      <DependentUpon>frmAvaliacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +89,9 @@
     <Compile Include="View\Login\frmNovaContaCliente.Designer.cs">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="obj\Debug\ArqStudio.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\ArqStudio.View.frmLogin.resources" />
+    <EmbeddedResource Include="obj\Debug\ArqStudio.View.Login.frmNovaContaCliente.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,12 +101,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Avaliação\frmAvaliacao.resx">
+      <DependentUpon>frmAvaliacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmNovaContaCliente.resx">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\ArqStudio.exe.config" />
+    <None Include="obj\Debug\ArqStudio.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\ArqStudio.csproj.CopyComplete" />
+    <None Include="obj\Debug\ArqStudio.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\ArqStudio.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\ArqStudio.csproj.SuggestedBindingRedirects.cache" />
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,7 +134,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\ArqStudio.exe" />
+    <Content Include="bin\Debug\ArqStudio.pdb" />
+    <Content Include="bin\Debug\MetroFramework.dll" />
+    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
     <Content Include="MetroFramework.txt" />
+    <Content Include="obj\Debug\ArqStudio.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ArqStudio.exe" />
+    <Content Include="obj\Debug\ArqStudio.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

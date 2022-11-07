@@ -1,4 +1,5 @@
 ﻿using ArqStudio.DataTransferObject.Login;
+using ArqStudio.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,8 @@ namespace ArqStudio.Interface
 
         bool delete(DtoLoginClienteProfissional lcp);
 
+        bool updateSenha(string senha, string cpf, bool adm);
+
+        Usuario getUsuario(string email, string senha);
     }
 }

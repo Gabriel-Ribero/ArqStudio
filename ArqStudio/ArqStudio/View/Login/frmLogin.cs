@@ -1,4 +1,6 @@
-﻿using ArqStudio.View.Login;
+﻿using ArqStudio.Model;
+using ArqStudio.Repository;
+using ArqStudio.View.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,33 +15,62 @@ namespace ArqStudio.View
 {
     public partial class frmLogin : MetroFramework.Forms.MetroForm
     {
+
+        private bool Adm = false;
+        LoginRep Rep = new LoginRep();
+
         public frmLogin()
         {
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCriarConta_Click(object sender, EventArgs e)
         {
             frmNovaContaCliente frm = new frmNovaContaCliente();
+            frm.Adm = Adm;
             frm.ShowDialog();
             frm.Dispose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmRecuperaSenha frm = new frmRecuperaSenha();
+            frm.Adm = Adm;
+            frm.ShowDialog();
+            frm.Dispose();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btEntrar_Click(object sender, EventArgs e)
         {
-
+            Usuario u = Rep.getUsuario(txtEmailUsuario.Text, txtSenha.Text);
+            if(u.IdUsuario != 0)
+            {
+                Form1 frm = new Form1();
+                frm.ShowDialog();
+                frm.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
-       
+        private void pictureBox2_DoubleClick(object sender, EventArgs e)
+        {
+            if (!Adm)
+            {
+                Adm = true;
+                MessageBox.Show("Modo Admin ativado.", "Modo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                Adm = false;
+                MessageBox.Show("Modo Admin desativado.", "Modo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+
     }
 }

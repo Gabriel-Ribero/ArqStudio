@@ -33,7 +33,7 @@
             this.txtEmailUsuario = new System.Windows.Forms.TextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btEntrar = new MetroFramework.Controls.MetroButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnCriarConta = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(185, 398);
+            this.metroLabel1.Location = new System.Drawing.Point(185, 396);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(111, 20);
             this.metroLabel1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.txtEmailUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtEmailUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailUsuario.Location = new System.Drawing.Point(318, 396);
+            this.txtEmailUsuario.Location = new System.Drawing.Point(344, 396);
             this.txtEmailUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmailUsuario.Name = "txtEmailUsuario";
             this.txtEmailUsuario.Size = new System.Drawing.Size(249, 22);
@@ -79,22 +79,22 @@
             // 
             this.txtSenha.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(318, 454);
+            this.txtSenha.Location = new System.Drawing.Point(344, 454);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(249, 22);
             this.txtSenha.TabIndex = 3;
             // 
-            // metroButton1
+            // btEntrar
             // 
-            this.metroButton1.Location = new System.Drawing.Point(377, 500);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(96, 32);
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "Entrar";
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btEntrar.Location = new System.Drawing.Point(377, 500);
+            this.btEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btEntrar.Name = "btEntrar";
+            this.btEntrar.Size = new System.Drawing.Size(96, 32);
+            this.btEntrar.TabIndex = 4;
+            this.btEntrar.Text = "Entrar";
+            this.btEntrar.Click += new System.EventHandler(this.btEntrar_Click);
             // 
             // linkLabel1
             // 
@@ -107,6 +107,7 @@
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Esqueceu a senha ?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnCriarConta
             // 
@@ -134,7 +135,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(76, 76);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(0, 0);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -145,18 +146,19 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(209, 61);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(427, 313);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.DoubleClick += new System.EventHandler(this.pictureBox2_DoubleClick);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(584, 382);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(610, 382);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(52, 55);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,8 +168,8 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(584, 445);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(610, 445);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(52, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +188,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCriarConta);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtEmailUsuario);
@@ -195,7 +197,6 @@
             this.Name = "frmLogin";
             this.Padding = new System.Windows.Forms.Padding(20, 74, 20, 20);
             this.ShowIcon = false;
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -211,7 +212,7 @@
         private System.Windows.Forms.TextBox txtEmailUsuario;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.TextBox txtSenha;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btEntrar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private MetroFramework.Controls.MetroButton btnCriarConta;
         private System.Windows.Forms.Label label2;

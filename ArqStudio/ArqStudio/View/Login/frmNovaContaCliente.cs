@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArqStudio.DataTransferObject.Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace ArqStudio.View.Login
 {
     public partial class frmNovaContaCliente : MetroFramework.Forms.MetroForm
     {
+        private DtoLoginClienteProfissional cpl;
+
         public frmNovaContaCliente()
         {
             InitializeComponent();
@@ -27,6 +30,17 @@ namespace ArqStudio.View.Login
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            cpl = new DtoLoginClienteProfissional();
+            cpl.Usuario.Email = txtEmail.Text;
+            cpl.Usuario.Senha = txtSenha.Text;
+            cpl.Cliente.Nome = txtNome.Text;
+            cpl.Cliente.SobreNome = txtSobreNome.Text;
+            cpl.Cliente.RG = txtRG.Text;
+            cpl.Cliente.CPF = txtCPF.Text;
+            cpl.Cliente.DataNasc = dtDataNascimento.Value.Date;
+            cpl.Cliente.DDD = txtDDD.Text;
+            cpl.Cliente.Telefone = txtTelefone.Text;
+            cpl.Cliente.Profissao = txtProfissao.Text;
 
         }
 

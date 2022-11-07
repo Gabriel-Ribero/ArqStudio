@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArqStudio.View.Avaliação;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,10 @@ namespace ArqStudio
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmAvaliacao fa = new frmAvaliacao();
+            fa.ShowDialog();
         }
     }
 }

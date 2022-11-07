@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,9 +45,9 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(20, 84);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(760, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,7 +58,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 86);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 42);
@@ -75,7 +73,7 @@
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Orçamento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // textBox1
             // 
@@ -91,17 +89,18 @@
             this.projetoToolStripMenuItem,
             this.perguntasToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Location = new System.Drawing.Point(20, 60);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(760, 24);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // pToolStripMenuItem
             // 
             this.pToolStripMenuItem.Name = "pToolStripMenuItem";
-            this.pToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.pToolStripMenuItem.Text = "Avalição";
+            this.pToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.pToolStripMenuItem.Text = "Avaliação";
+            this.pToolStripMenuItem.Click += new System.EventHandler(this.pToolStripMenuItem_Click);
             // 
             // projetoToolStripMenuItem
             // 

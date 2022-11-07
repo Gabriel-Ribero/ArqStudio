@@ -28,13 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmb_pesquisa = new System.Windows.Forms.ComboBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.btn_alterar = new System.Windows.Forms.Button();
-            this.btn_apagar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmb_profissional = new System.Windows.Forms.ComboBox();
             this.txt_nota = new System.Windows.Forms.TextBox();
@@ -46,67 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_avaliar = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.btn_localizar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(731, 188);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmb_pesquisa);
-            this.groupBox1.Controls.Add(this.btn_buscar);
-            this.groupBox1.Controls.Add(this.lbl_pesquisa);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.btn_alterar);
-            this.groupBox1.Controls.Add(this.btn_apagar);
-            this.groupBox1.Location = new System.Drawing.Point(34, 372);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 312);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Visualização:";
-            // 
-            // cmb_pesquisa
-            // 
-            this.cmb_pesquisa.FormattingEnabled = true;
-            this.cmb_pesquisa.Location = new System.Drawing.Point(113, 24);
-            this.cmb_pesquisa.Name = "cmb_pesquisa";
-            this.cmb_pesquisa.Size = new System.Drawing.Size(263, 21);
-            this.cmb_pesquisa.TabIndex = 4;
-            this.cmb_pesquisa.SelectedIndexChanged += new System.EventHandler(this.cmb_pesquisa_SelectedIndexChanged);
-            this.cmb_pesquisa.SelectedValueChanged += new System.EventHandler(this.cmb_pesquisa_SelectedValueChanged);
-            // 
-            // btn_buscar
-            // 
-            this.btn_buscar.Location = new System.Drawing.Point(248, 50);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(128, 23);
-            this.btn_buscar.TabIndex = 3;
-            this.btn_buscar.Text = "Pesquisar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
-            // lbl_pesquisa
-            // 
-            this.lbl_pesquisa.AutoSize = true;
-            this.lbl_pesquisa.Location = new System.Drawing.Point(6, 27);
-            this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(101, 13);
-            this.lbl_pesquisa.TabIndex = 1;
-            this.lbl_pesquisa.Text = "Selecione o Cliente:";
-            // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(6, 275);
+            this.btn_alterar.Location = new System.Drawing.Point(143, 265);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(128, 23);
             this.btn_alterar.TabIndex = 5;
@@ -114,21 +54,14 @@
             this.btn_alterar.UseVisualStyleBackColor = true;
             this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
             // 
-            // btn_apagar
-            // 
-            this.btn_apagar.Location = new System.Drawing.Point(140, 275);
-            this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(128, 23);
-            this.btn_apagar.TabIndex = 6;
-            this.btn_apagar.Text = "Apagar Avaliação";
-            this.btn_apagar.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_localizar);
             this.groupBox2.Controls.Add(this.cmb_profissional);
             this.groupBox2.Controls.Add(this.txt_nota);
             this.groupBox2.Controls.Add(this.rtxt_descricao);
             this.groupBox2.Controls.Add(this.txt_cliente);
+            this.groupBox2.Controls.Add(this.btn_alterar);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -219,7 +152,7 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(649, 699);
+            this.btn_sair.Location = new System.Drawing.Point(649, 372);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(128, 23);
             this.btn_sair.TabIndex = 4;
@@ -227,20 +160,25 @@
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
+            // btn_localizar
+            // 
+            this.btn_localizar.Location = new System.Drawing.Point(574, 25);
+            this.btn_localizar.Name = "btn_localizar";
+            this.btn_localizar.Size = new System.Drawing.Size(116, 23);
+            this.btn_localizar.TabIndex = 15;
+            this.btn_localizar.Text = "Consultar Avaliações";
+            this.btn_localizar.UseVisualStyleBackColor = true;
+            // 
             // frmAvaliacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 732);
+            this.ClientSize = new System.Drawing.Size(800, 411);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "frmAvaliacao";
             this.Text = "Avaliação";
             this.Load += new System.EventHandler(this.frmAvaliacao_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -248,16 +186,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btn_apagar;
         private System.Windows.Forms.Button btn_avaliar;
         private System.Windows.Forms.Button btn_sair;
-        private System.Windows.Forms.ComboBox cmb_pesquisa;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.TextBox txt_nota;
         private System.Windows.Forms.RichTextBox rtxt_descricao;
@@ -267,5 +198,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_profissional;
+        private System.Windows.Forms.Button btn_localizar;
     }
 }

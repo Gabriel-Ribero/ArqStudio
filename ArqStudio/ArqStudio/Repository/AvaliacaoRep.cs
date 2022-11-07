@@ -15,7 +15,7 @@ namespace ArqStudio.Repository
         public void adiciona(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Insert into Avaliacao(IdCliente, IdProfissional, Descricao, Nota) " +
                 $"values ('{Ava.IdCliente}','{Ava.IdUsuario}','{Ava.Descricao}','{Ava.Nota}')";
@@ -30,7 +30,7 @@ namespace ArqStudio.Repository
         public void altera(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Update Avaliacao set IdCliente = {Ava.IdCliente}, " +
                 $"IdProfissional = {Ava.IdUsuario}, Descricao = '{Ava.Descricao}', Nota = '{Ava.Nota}' where IdAvaliacao = {Ava.IdAvaliacao}";
@@ -50,7 +50,7 @@ namespace ArqStudio.Repository
         public void exclui(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Delete Avaliacao where IdAvaliacao = '{Ava.IdAvaliacao}'";
 
@@ -65,7 +65,7 @@ namespace ArqStudio.Repository
         public DataSet Get(int pesquisa)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             string sql = $"select A.IdAvaliacao, C.Nome, P.Nome, A.Descricao, A.Nota" +
@@ -84,7 +84,7 @@ namespace ArqStudio.Repository
         public Avaliacao GetAvaliacao(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -105,10 +105,10 @@ namespace ArqStudio.Repository
             return Ava;
         }
 
-        public Objeto GetCliente(int id)
+        public List<Objeto> GetCliente(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = .\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -116,15 +116,39 @@ namespace ArqStudio.Repository
             cmd.CommandText = $"Select IdCliente as Id, Nome from Cliente where IdCliente = {id}";
 
             SqlDataReader dr = cmd.ExecuteReader();
-            Objeto ob = new Objeto();
+            List<Objeto> ob = new List<Objeto>();
 
-            if (dr.Read())
+            while (dr.Read())
             {
-               ob.Id = int.Parse(dr[0].ToString());
-               ob.Nome = dr[1].ToString();
+                Objeto Aux = new Objeto();
+                Aux.Id = int.Parse(dr[0].ToString());
+                Aux.Nome = dr[1].ToString();
+                ob.Add(Aux);
             }
             return ob;
         }
-        //teste
+
+        public List<Objeto> GetProfissional(int id)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = $"Select IdProfissional as Id, Nome from Profissional where IdProfissional = {id}";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<Objeto> ob = new List<Objeto>();
+
+            while (dr.Read())
+            {
+                Objeto Aux = new Objeto();
+                Aux.Id = int.Parse(dr[0].ToString());
+                Aux.Nome = dr[1].ToString();
+                ob.Add(Aux);
+            }
+            return ob;
+        }
     }
 }

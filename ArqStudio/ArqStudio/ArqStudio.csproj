@@ -56,26 +56,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObject\Login\DtoLoginClienteProfissional.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IAvaliacao.cs" />
+    <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Cliente.cs" />
-    <Compile Include="Model\IAvaliacao.cs" />
     <Compile Include="Model\Objeto.cs" />
+    <Compile Include="Model\Profissional.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\RAvaliacao.cs" />
+    <Compile Include="Repository\AvaliacaoRep.cs" />
+    <Compile Include="Repository\LoginRep.cs" />
     <Compile Include="View\Avaliação\frmAvaliacao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Avaliação\frmAvaliacao.Designer.cs">
       <DependentUpon>frmAvaliacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Avaliação\frmAvaliacaoPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Avaliação\frmAvaliacaoPesquisa.Designer.cs">
+      <DependentUpon>frmAvaliacaoPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login\frmLogin.cs">
       <SubType>Form</SubType>
@@ -89,6 +105,15 @@
     <Compile Include="View\Login\frmNovaContaCliente.Designer.cs">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Projeto\frmProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Projeto\frmProjeto.Designer.cs">
+      <DependentUpon>frmProjeto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ArqStudio.Properties.Resources.resources" />
     <EmbeddedResource Include="obj\Debug\ArqStudio.View.frmLogin.resources" />
     <EmbeddedResource Include="obj\Debug\ArqStudio.View.Login.frmNovaContaCliente.resources" />
@@ -104,11 +129,17 @@
     <EmbeddedResource Include="View\Avaliação\frmAvaliacao.resx">
       <DependentUpon>frmAvaliacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Avaliação\frmAvaliacaoPesquisa.resx">
+      <DependentUpon>frmAvaliacaoPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmNovaContaCliente.resx">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\frmProjeto.resx">
+      <DependentUpon>frmProjeto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\ArqStudio.exe.config" />
     <None Include="obj\Debug\ArqStudio.csproj.AssemblyReference.cache" />

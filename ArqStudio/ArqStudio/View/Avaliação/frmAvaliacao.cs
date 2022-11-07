@@ -20,20 +20,14 @@ namespace ArqStudio.View.Avaliação
         }
         Avaliacao Ava = new Avaliacao();
         frmLogin Login = new frmLogin();
-        RAvaliacao ra = new RAvaliacao();
+        AvaliacaoRep ra = new AvaliacaoRep();
+        LoginRep lr = new LoginRep();
         Objeto ob = new Objeto();
         public int idAvaliacao;
         public int idCliente;
         public int idProfissional;
         public string descricao;
         public int nota;
-
-        private void CarregaComboCliente()
-        {
-            cmb_pesquisa.DataSource = ra.GetCliente(idCliente);
-            cmb_pesquisa.ValueMember = "Id";
-            cmb_pesquisa.DisplayMember = "Nome";
-        }
 
         private void CarregaComboProfissional()
         {
@@ -42,20 +36,9 @@ namespace ArqStudio.View.Avaliação
             cmb_profissional.DisplayMember = "Nome";
         }
 
-        private void CarregaGrid(int id)
-        {
-            dataGridView1.DataSource = ra.GetAvaliacao(id);
-        }
-
         private void frmAvaliacao_Load(object sender, EventArgs e)
         {
-            CarregaComboCliente();
-            CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
-        }
-
-        private void cmb_pesquisa_SelectedValueChanged(object sender, EventArgs e)
-        {
-            CarregaGrid((int)cmb_pesquisa.SelectedValue);
+            CarregaComboProfissional();
         }
 
         private void btn_sair_Click(object sender, EventArgs e)
@@ -75,39 +58,26 @@ namespace ArqStudio.View.Avaliação
             MessageBox.Show("Registro incluido com sucesso!!!");
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = ra.Get(int.Parse(cmb_pesquisa.Text));
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            idAvaliacao = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            if(idAvaliacao != 0)
-            {
-                Ava = ra.GetAvaliacao(idAvaliacao);
-                ob = ra.GetCliente(Ava.IdCliente);
-                txt_cliente.Text = ob.Nome;
-                ob = ra.GetProfissional(Ava.IdUsuario);
-                cmb_profissional.Text = ob.Nome;
-                rtxt_descricao.Text = Ava.Descricao;
-                txt_nota.Text = Ava.Nota.ToString(); ;
-            }
-        }
-
-        private void cmb_pesquisa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            idCliente = int.Parse(((Cliente)cmb_pesquisa.SelectedItem).IdCliente.ToString());
-            dataGridView1.DataSource = ra.Get(idCliente).Tables[0];
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Visible = false;
-            dataGridView1.RowHeadersVisible = false;
-        }
-
         private void btn_alterar_Click(object sender, EventArgs e)
         {
             ra.altera(Ava);
             MessageBox.Show("Registro alterado com sucesso!!!");
         }
+
+        //private void btn_localizar_Click(object sender, EventArgs e)
+        //{
+        //    frmAvaliacaoPesquisa fap = new frmAvaliacaoPesquisa();
+        //    fap.ShowDialog();
+        //    int codigo = fap.idAvaliacao;
+        //    if (codigo != 0)
+        //    {
+        //        Ava = ra.GetAvaliacao(codigo);
+        //        Login = lr.GetCliente(IdCliente);
+        //        txt_cliente.Text = Login.Nome;
+        //        v = rv.GetVacina(f.IdVacina);
+        //        cmbVacina.Text = v.NomeVacina;
+        //        dateTimePicker1.Text = f.DataFicha;
+        //    }
+        //}
     }
 }

@@ -1,8 +1,6 @@
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\bin\Debug\ArqStudio.exe.config
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\bin\Debug\ArqStudio.exe
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\bin\Debug\ArqStudio.pdb
-C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\bin\Debug\MetroFramework.dll
-C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.csproj.AssemblyReference.cache
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.csproj.SuggestedBindingRedirects.cache
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.Properties.Resources.resources
@@ -41,3 +39,7 @@ C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debu
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.csproj.CopyComplete
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.exe
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.pdb
+C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.Form1.resources
+C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacao.resources
+C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Projeto.frmProjeto.resources
+C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacaoPesquisa.resources

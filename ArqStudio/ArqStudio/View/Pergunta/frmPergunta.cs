@@ -8,25 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ArqStudio
+namespace ArqStudio.View.Pergunta
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class frmPergunta :  MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public frmPergunta()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmPergunta_Load(object sender, EventArgs e)
         {
 
         }
-
-       
     }
 }

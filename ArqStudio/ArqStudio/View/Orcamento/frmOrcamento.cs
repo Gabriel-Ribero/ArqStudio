@@ -8,25 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ArqStudio
+namespace ArqStudio.View.Orcamento
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class frmOrcamento : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public frmOrcamento()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void avistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmOrcamento_Load(object sender, EventArgs e)
         {
 
         }
-
-       
     }
 }

@@ -77,6 +77,12 @@
     <Compile Include="View\Avaliação\frmAvaliacao.Designer.cs">
       <DependentUpon>frmAvaliacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,15 @@
     <Compile Include="View\Login\frmNovaContaCliente.Designer.cs">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Projeto\frmProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Projeto\frmProjeto.Designer.cs">
+      <DependentUpon>frmProjeto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ArqStudio.Properties.Resources.resources" />
     <EmbeddedResource Include="obj\Debug\ArqStudio.View.frmLogin.resources" />
     <EmbeddedResource Include="obj\Debug\ArqStudio.View.Login.frmNovaContaCliente.resources" />
@@ -109,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmNovaContaCliente.resx">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Projeto\frmProjeto.resx">
+      <DependentUpon>frmProjeto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\ArqStudio.exe.config" />
     <None Include="obj\Debug\ArqStudio.csproj.AssemblyReference.cache" />

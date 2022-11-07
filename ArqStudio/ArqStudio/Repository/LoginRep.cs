@@ -108,7 +108,7 @@ namespace ArqStudio.Repository
         public void SqlConnectionExecute(string query)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             sql = query;
@@ -122,7 +122,7 @@ namespace ArqStudio.Repository
         public SqlDataReader SqlConnectionRead(string query)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             sql = query;

@@ -19,10 +19,13 @@ namespace ArqStudio.View.Avaliação
         {
             InitializeComponent();
         }
+        Usuario us = new Usuario();
         AvaliacaoRep ra = new AvaliacaoRep();
         LoginRep lg = new LoginRep();
         public int idAvaliacao;
         private int idCliente;
+
+        internal Usuario Us { get => us; set => us = value; }
 
         private void CarregaComboCliente()
         {
@@ -43,7 +46,19 @@ namespace ArqStudio.View.Avaliação
 
         private void frmAvaliacaoPesquisa_Load(object sender, EventArgs e)
         {
-            CarregaComboCliente();
+            
+            if(Us.IdUsuario == 1)
+            {
+                CarregaComboCliente();
+                CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
+            }
+            else
+            {
+                //CarregaGrid()
+                cmb_pesquisa.Visible = false;
+                lbl_pesquisa.Visible = false;
+                btn_apagar.Visible = false;
+            }
             CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
         }
 

@@ -18,6 +18,7 @@ namespace ArqStudio.View.Avaliação
         {
             InitializeComponent();
         }
+        Usuario us = new Usuario();
         Avaliacao Ava = new Avaliacao();
         frmLogin Login = new frmLogin();
         AvaliacaoRep ra = new AvaliacaoRep();
@@ -28,6 +29,8 @@ namespace ArqStudio.View.Avaliação
         public int idProfissional;
         public string descricao;
         public int nota;
+
+        internal Usuario Us { get => us; set => us = value; }
 
         private void CarregaComboProfissional()
         {
@@ -62,6 +65,13 @@ namespace ArqStudio.View.Avaliação
         {
             ra.altera(Ava);
             MessageBox.Show("Registro alterado com sucesso!!!");
+        }
+
+        private void btn_localizar_Click(object sender, EventArgs e)
+        {
+            frmAvaliacaoPesquisa fap = new frmAvaliacaoPesquisa();
+            fap.Us = Us;
+            fap.ShowDialog();
         }
 
         //private void btn_localizar_Click(object sender, EventArgs e)

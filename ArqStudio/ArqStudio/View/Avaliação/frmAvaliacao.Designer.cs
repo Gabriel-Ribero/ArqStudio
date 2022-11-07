@@ -30,6 +30,7 @@
         {
             this.btn_alterar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_localizar = new System.Windows.Forms.Button();
             this.cmb_profissional = new System.Windows.Forms.ComboBox();
             this.txt_nota = new System.Windows.Forms.TextBox();
             this.rtxt_descricao = new System.Windows.Forms.RichTextBox();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_avaliar = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
-            this.btn_localizar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Avaliar Profissional";
+            // 
+            // btn_localizar
+            // 
+            this.btn_localizar.Location = new System.Drawing.Point(574, 25);
+            this.btn_localizar.Name = "btn_localizar";
+            this.btn_localizar.Size = new System.Drawing.Size(116, 23);
+            this.btn_localizar.TabIndex = 15;
+            this.btn_localizar.Text = "Consultar Avaliações";
+            this.btn_localizar.UseVisualStyleBackColor = true;
+            this.btn_localizar.Click += new System.EventHandler(this.btn_localizar_Click);
             // 
             // cmb_profissional
             // 
@@ -159,15 +169,6 @@
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
-            // 
-            // btn_localizar
-            // 
-            this.btn_localizar.Location = new System.Drawing.Point(574, 25);
-            this.btn_localizar.Name = "btn_localizar";
-            this.btn_localizar.Size = new System.Drawing.Size(116, 23);
-            this.btn_localizar.TabIndex = 15;
-            this.btn_localizar.Text = "Consultar Avaliações";
-            this.btn_localizar.UseVisualStyleBackColor = true;
             // 
             // frmAvaliacao
             // 

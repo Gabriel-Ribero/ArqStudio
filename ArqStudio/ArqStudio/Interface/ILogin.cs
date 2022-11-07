@@ -19,5 +19,9 @@ namespace ArqStudio.Interface
         bool updateSenha(string senha, string cpf, bool adm);
 
         Usuario getUsuario(string email, string senha);
+        
+        DtoLoginClienteProfissional getCliente(int id);
+
+        DtoLoginClienteProfissional getProfissional(int id);
     }
 }

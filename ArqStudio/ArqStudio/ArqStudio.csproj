@@ -57,16 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataTransferObject\Login\DtoLoginClienteProfissional.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Interface\IAvaliacao.cs" />
     <Compile Include="Interface\ILogin.cs" />
     <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Objeto.cs" />
     <Compile Include="Model\Profissional.cs" />
     <Compile Include="Model\Usuario.cs" />
@@ -87,12 +88,6 @@
     <Compile Include="View\Avaliação\frmAvaliacaoPesquisa.Designer.cs">
       <DependentUpon>frmAvaliacaoPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,14 +100,38 @@
     <Compile Include="View\Login\frmNovaContaCliente.Designer.cs">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Login\frmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\frmPerfil.Designer.cs">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\frmRecuperaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\frmRecuperaSenha.Designer.cs">
+      <DependentUpon>frmRecuperaSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Orcamento\frmOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Orcamento\frmOrcamento.Designer.cs">
+      <DependentUpon>frmOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pergunta\frmPergunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Pergunta\frmPergunta.Designer.cs">
+      <DependentUpon>frmPergunta.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Projeto\frmProjeto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Projeto\frmProjeto.Designer.cs">
       <DependentUpon>frmProjeto.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\ArqStudio.Properties.Resources.resources" />
     <EmbeddedResource Include="obj\Debug\ArqStudio.View.frmLogin.resources" />
@@ -137,6 +156,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\frmNovaContaCliente.resx">
       <DependentUpon>frmNovaContaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\frmPerfil.resx">
+      <DependentUpon>frmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\frmRecuperaSenha.resx">
+      <DependentUpon>frmRecuperaSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Orcamento\frmOrcamento.resx">
+      <DependentUpon>frmOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pergunta\frmPergunta.resx">
+      <DependentUpon>frmPergunta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Projeto\frmProjeto.resx">
       <DependentUpon>frmProjeto.cs</DependentUpon>

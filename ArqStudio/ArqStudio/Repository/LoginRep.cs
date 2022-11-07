@@ -5,15 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ArqStudio.Repository
 {
     internal class LoginRep : ILogin
     {
         private string sql;
-        
 
         public bool incluir(DtoLoginClienteProfissional lcp)
         {
@@ -24,7 +25,7 @@ namespace ArqStudio.Repository
 
                 int id = 0;
                 SqlDataReader dr = SqlConnectionRead("Select IdUsuario From Usuarios Order By IdUsuario Desc");
-                while (dr.Read())
+                if (dr.Read())
                 {
                     id = int.Parse(dr[0].ToString());
                 }
@@ -58,7 +59,26 @@ namespace ArqStudio.Repository
 
         public bool update(DtoLoginClienteProfissional lcp)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if(lcp.Usuario.Adm == 0)
+                {
+                    SqlConnectionExecute($"Update Cliente Set Nome = '{lcp.Cliente.Nome}', SobreNome = '{lcp.Cliente.SobreNome}', RG = '{lcp.Cliente.RG}'," +
+                                         $"CPF = '{lcp.Cliente.CPF}', DataNasc = '{lcp.Cliente.DataNasc}', DDD = '{lcp.Cliente.DDD}', Telefone = '{lcp.Cliente.Telefone}', Profissao = '{lcp.Cliente.Profissao}'" +
+                                         $"Where IdUsuario = {lcp.Usuario.IdUsuario}");
+                }
+                else
+                {
+                    SqlConnectionExecute($"Update Profissional Set Nome = '{lcp.Profissional.Nome}', SobreNome = '{lcp.Profissional.SobreNome}', CAU = '{lcp.Profissional.CAU}'," +
+                                                             $"CPF = '{lcp.Profissional.CPF}'" +
+                                                             $"Where IdUsuario = {lcp.Usuario.IdUsuario}");
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool delete(DtoLoginClienteProfissional lcp)
@@ -105,6 +125,47 @@ namespace ArqStudio.Repository
             return u;
         }
 
+        public DtoLoginClienteProfissional getCliente(int id)
+        {
+            SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario, c.Nome, c.SobreNome, c.RG, c.CPF, c.DataNasc, c.DDD, c.Telefone, c.Profissao From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
+
+            DtoLoginClienteProfissional clp = new DtoLoginClienteProfissional();
+            while (dr.Read())
+            {
+                clp.Usuario.IdUsuario = int.Parse(dr[0].ToString());
+                clp.Cliente.Nome = dr[1].ToString();
+                clp.Cliente.SobreNome = dr[2].ToString();
+                clp.Cliente.RG = dr[3].ToString();
+                clp.Cliente.CPF = dr[4].ToString();
+                clp.Cliente.DataNasc = DateTime.Parse(dr[5].ToString());
+                clp.Cliente.DDD = dr[6].ToString();
+                clp.Cliente.Telefone = dr[7].ToString();
+                clp.Cliente.Profissao = dr[8].ToString();
+            }
+            dr.Close();
+            return clp;
+        }
+
+        public DtoLoginClienteProfissional getProfissional(int id)
+        {
+            SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario, p.Nome, p.SobreNome, p.CAU, p.CPF From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
+
+            DtoLoginClienteProfissional clp = new DtoLoginClienteProfissional();
+            while (dr.Read())
+            {
+                clp.Usuario.IdUsuario = int.Parse(dr[0].ToString());
+                clp.Profissional.Nome = dr[1].ToString();
+                clp.Profissional.SobreNome = dr[2].ToString();
+                clp.Profissional.CAU = dr[3].ToString();
+                clp.Profissional.CPF = dr[4].ToString();
+            }
+            dr.Close();
+            return clp;
+        }
+
+
+        #region "Funções"
+
         public void SqlConnectionExecute(string query)
         {
             SqlConnection conn = new SqlConnection();
@@ -133,5 +194,6 @@ namespace ArqStudio.Repository
             return dr;
         }
 
+        #endregion
     }
 }

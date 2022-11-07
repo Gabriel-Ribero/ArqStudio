@@ -18,35 +18,27 @@ namespace ArqStudio.View.Avaliação
         {
             InitializeComponent();
         }
-        frmAvaliacao Ava = new frmAvaliacao();
+        Avaliacao Ava = new Avaliacao();
         frmLogin Login = new frmLogin();
-        RAvaliacao ra = new RAvaliacao();
+        AvaliacaoRep ra = new AvaliacaoRep();
+        LoginRep lr = new LoginRep();
         Objeto ob = new Objeto();
-        int idCliente;
-        int idProfissional;
-        string descricao;
-        int nota;
+        public int idAvaliacao;
+        public int idCliente;
+        public int idProfissional;
+        public string descricao;
+        public int nota;
 
-        private void CarregaComboCliente()
+        private void CarregaComboProfissional()
         {
-            cmb_pesquisa.DataSource = ra.GetCliente(idCliente);
-            cmb_pesquisa.ValueMember = "Id";
-            cmb_pesquisa.DisplayMember = "Name";
-        }
-        private void CarregaGrid(int id)
-        {
-            dataGridView1.DataSource = ra.GetAvaliacao(id);
+            cmb_profissional.DataSource = ra.GetProfissional(idProfissional);
+            cmb_profissional.ValueMember = "Id";
+            cmb_profissional.DisplayMember = "Nome";
         }
 
         private void frmAvaliacao_Load(object sender, EventArgs e)
         {
-            CarregaComboCliente();
-            CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
-        }
-
-        private void cmb_pesquisa_SelectedValueChanged(object sender, EventArgs e)
-        {
-            CarregaGrid((int)cmb_pesquisa.SelectedValue);
+            CarregaComboProfissional();
         }
 
         private void btn_sair_Click(object sender, EventArgs e)
@@ -54,17 +46,38 @@ namespace ArqStudio.View.Avaliação
             Close();
         }
         //Necessário uma flag para a tela de inserir e alterar
-        //Continuar...
 
         private void btn_avaliar_Click(object sender, EventArgs e)
         {
-            Ava.idCliente = idCliente;
-            Ava.idProfissional = idProfissional;
-            Ava.descricao = descricao;
-            Ava.nota = nota;
+            Ava.IdCliente = idCliente;
+            Ava.IdUsuario = idProfissional;
+            Ava.Descricao = rtxt_descricao.Text;
+            Ava.Nota = int.Parse(txt_nota.Text);
 
-            //ra.adiciona(Ava);
+            ra.adiciona(Ava);
             MessageBox.Show("Registro incluido com sucesso!!!");
         }
+
+        private void btn_alterar_Click(object sender, EventArgs e)
+        {
+            ra.altera(Ava);
+            MessageBox.Show("Registro alterado com sucesso!!!");
+        }
+
+        //private void btn_localizar_Click(object sender, EventArgs e)
+        //{
+        //    frmAvaliacaoPesquisa fap = new frmAvaliacaoPesquisa();
+        //    fap.ShowDialog();
+        //    int codigo = fap.idAvaliacao;
+        //    if (codigo != 0)
+        //    {
+        //        Ava = ra.GetAvaliacao(codigo);
+        //        Login = lr.GetCliente(IdCliente);
+        //        txt_cliente.Text = Login.Nome;
+        //        v = rv.GetVacina(f.IdVacina);
+        //        cmbVacina.Text = v.NomeVacina;
+        //        dateTimePicker1.Text = f.DataFicha;
+        //    }
+        //}
     }
 }

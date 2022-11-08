@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View.Orcamento
 {
-    public partial class frmOrcamento : MetroFramework.Forms.MetroForm
+    public partial class frmOrcamento : Form
     {
         public frmOrcamento()
         {
@@ -27,6 +27,6 @@ namespace ArqStudio.View.Orcamento
 
         }
 
-       
+        
     }
 }

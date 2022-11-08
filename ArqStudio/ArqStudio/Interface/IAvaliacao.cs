@@ -18,7 +18,7 @@ namespace ArqStudio.Model
         Avaliacao GetAvaliacao(int id);
 
         List<Objeto> GetCliente(int id);
-        List<Objeto> GetProfissional(int id);
+        IEnumerable<Objeto> GetProfissional();
 
         DataSet Get(int pesquisa);
     }

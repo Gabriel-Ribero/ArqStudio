@@ -51,15 +51,17 @@ namespace ArqStudio.View.Avaliação
             {
                 CarregaComboCliente();
                 CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
+                lbl_pesquisa.Visible = true;
+                cmb_pesquisa.Visible = true;
             }
             else
             {
-                //CarregaGrid()
+                //CarregaGrid(ra.GetAvaliacao(Us.IdUsuario));
                 cmb_pesquisa.Visible = false;
                 lbl_pesquisa.Visible = false;
-                btn_apagar.Visible = false;
+                btn_apagar.Visible = true;
             }
-            CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
+            //CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)

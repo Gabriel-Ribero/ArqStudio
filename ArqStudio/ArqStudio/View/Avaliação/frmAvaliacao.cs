@@ -19,10 +19,11 @@ namespace ArqStudio.View.Avaliação
             InitializeComponent();
         }
         Usuario us = new Usuario();
+        Cliente cliente = new Cliente();
         Avaliacao Ava = new Avaliacao();
         frmLogin Login = new frmLogin();
         AvaliacaoRep ra = new AvaliacaoRep();
-        LoginRep lr = new LoginRep();
+        LoginRep Rep = new LoginRep();
         Objeto ob = new Objeto();
         public int idAvaliacao;
         public int idCliente;
@@ -31,16 +32,20 @@ namespace ArqStudio.View.Avaliação
         public int nota;
 
         internal Usuario Us { get => us; set => us = value; }
+        internal Cliente Cliente { get => cliente; set => cliente = value; }
 
         private void CarregaComboProfissional()
         {
-            cmb_profissional.DataSource = ra.GetProfissional(idProfissional);
+            cmb_profissional.DataSource = ra.GetProfissional();
             cmb_profissional.ValueMember = "Id";
             cmb_profissional.DisplayMember = "Nome";
         }
 
         private void frmAvaliacao_Load(object sender, EventArgs e)
         {
+            
+           // txt_cliente.Text = ra.GetCliente();
+            txt_cliente.ReadOnly = true;
             CarregaComboProfissional();
         }
 

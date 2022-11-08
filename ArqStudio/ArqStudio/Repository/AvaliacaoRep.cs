@@ -15,7 +15,7 @@ namespace ArqStudio.Repository
         public void adiciona(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Insert into Avaliacao(IdCliente, IdProfissional, Descricao, Nota) " +
                 $"values ('{Ava.IdCliente}','{Ava.IdUsuario}','{Ava.Descricao}','{Ava.Nota}')";
@@ -30,7 +30,7 @@ namespace ArqStudio.Repository
         public void altera(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Update Avaliacao set IdCliente = {Ava.IdCliente}, " +
                 $"IdProfissional = {Ava.IdUsuario}, Descricao = '{Ava.Descricao}', Nota = '{Ava.Nota}' where IdAvaliacao = {Ava.IdAvaliacao}";
@@ -50,7 +50,7 @@ namespace ArqStudio.Repository
         public void exclui(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
             string sql = $"Delete Avaliacao where IdAvaliacao = '{Ava.IdAvaliacao}'";
 
@@ -65,7 +65,7 @@ namespace ArqStudio.Repository
         public DataSet Get(int pesquisa)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             string sql = $"select A.IdAvaliacao, C.Nome, P.Nome, A.Descricao, A.Nota" +
@@ -84,7 +84,7 @@ namespace ArqStudio.Repository
         public Avaliacao GetAvaliacao(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -105,15 +105,15 @@ namespace ArqStudio.Repository
             return Ava;
         }
 
-        public List<Objeto> GetCliente(int id)
+        public IEnumerable<Objeto> GetCliente(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = $"Select IdCliente as Id, Nome from Cliente where IdCliente = {id}";
+            cmd.CommandText = $"Select * from Cliente";
 
             SqlDataReader dr = cmd.ExecuteReader();
             List<Objeto> ob = new List<Objeto>();
@@ -128,15 +128,15 @@ namespace ArqStudio.Repository
             return ob;
         }
 
-        public List<Objeto> GetProfissional(int id)
+        public IEnumerable<Objeto> GetProfissional()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL\\; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = $"Select IdProfissional as Id, Nome from Profissional where IdProfissional = {id}";
+            cmd.CommandText = $"Select * from Profissional";
 
             SqlDataReader dr = cmd.ExecuteReader();
             List<Objeto> ob = new List<Objeto>();

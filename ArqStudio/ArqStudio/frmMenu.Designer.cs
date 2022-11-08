@@ -35,6 +35,7 @@
             this.btnProjeto = new System.Windows.Forms.ToolStripMenuItem();
             this.perguntasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.avaliaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,48 +52,56 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPerfil,
             this.btnProjeto,
+            this.avaliaçãoToolStripMenuItem,
             this.perguntasToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(27, 74);
+            this.menuStrip2.Location = new System.Drawing.Point(20, 60);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1041, 28);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(781, 24);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // btnPerfil
             // 
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(56, 24);
+            this.btnPerfil.Size = new System.Drawing.Size(46, 20);
             this.btnPerfil.Text = "Perfil";
             this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // btnProjeto
             // 
             this.btnProjeto.Name = "btnProjeto";
-            this.btnProjeto.Size = new System.Drawing.Size(71, 24);
+            this.btnProjeto.Size = new System.Drawing.Size(57, 20);
             this.btnProjeto.Text = "Projeto";
             // 
             // perguntasToolStripMenuItem
             // 
             this.perguntasToolStripMenuItem.Name = "perguntasToolStripMenuItem";
-            this.perguntasToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.perguntasToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.perguntasToolStripMenuItem.Text = "Perguntas";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // avaliaçãoToolStripMenuItem
+            // 
+            this.avaliaçãoToolStripMenuItem.Name = "avaliaçãoToolStripMenuItem";
+            this.avaliaçãoToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.avaliaçãoToolStripMenuItem.Text = "Avaliação";
+            this.avaliaçãoToolStripMenuItem.Click += new System.EventHandler(this.avaliaçãoToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 571);
+            this.ClientSize = new System.Drawing.Size(821, 464);
             this.Controls.Add(this.menuStrip2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenu";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
@@ -109,6 +118,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnProjeto;
         private System.Windows.Forms.ToolStripMenuItem perguntasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem avaliaçãoToolStripMenuItem;
     }
 }
 

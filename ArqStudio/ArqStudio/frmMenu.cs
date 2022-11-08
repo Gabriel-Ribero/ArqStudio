@@ -31,5 +31,24 @@ namespace ArqStudio
             frm.ShowDialog();
             frm.Dispose();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void avaliaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Us.IdUsuario == 1)
+            {
+                frmAvaliacaoPesquisa fap = new frmAvaliacaoPesquisa();
+                fap.ShowDialog();
+            }
+            else
+            {
+                frmAvaliacao fa = new frmAvaliacao();
+                fa.ShowDialog();
+            }
+        }
     }
 }

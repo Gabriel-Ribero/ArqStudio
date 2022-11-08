@@ -43,9 +43,10 @@ C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debu
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacao.resources
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Projeto.frmProjeto.resources
 C:\Users\bhmat\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacaoPesquisa.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.Form1.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacaoPesquisa.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Orcamento.frmOrcamento.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Pergunta.frmPergunta.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Projeto.frmProjeto.resources
-C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Login.frmRecuperaSenha.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Login.frmRecuperaSenha.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Projeto.frmProjeto.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacaoPesquisa.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Orcamento.frmOrcamento.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Pergunta.frmPergunta.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.frmMenu.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Login.frmPerfil.resources

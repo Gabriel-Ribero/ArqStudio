@@ -45,7 +45,8 @@ namespace ArqStudio.View
             Usuario u = Rep.getUsuario(txtEmailUsuario.Text, txtSenha.Text);
             if(u.IdUsuario != 0)
             {
-                Form1 frm = new Form1();
+                frmMenu frm = new frmMenu();
+                frm.Us = u;
                 frm.ShowDialog();
                 frm.Dispose();
             }
@@ -56,7 +57,7 @@ namespace ArqStudio.View
             }
         }
 
-        private void pictureBox2_DoubleClick(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (!Adm)
             {
@@ -71,6 +72,5 @@ namespace ArqStudio.View
                 return;
             }
         }
-
     }
 }

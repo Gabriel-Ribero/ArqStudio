@@ -13,9 +13,10 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View.Login
 {
-    public partial class frmNovaContaCliente : MetroFramework.Forms.MetroForm
+    public partial class frmNovaContaCliente : Form
     {
         private DtoLoginClienteProfissional cpl = new DtoLoginClienteProfissional();
+        List<DtoGridEndereco> gridEndereco = new List<DtoGridEndereco>();
         private LoginRep Rep = new LoginRep();
         public bool Adm; 
 
@@ -38,19 +39,19 @@ namespace ArqStudio.View.Login
                 lblProfissao.Visible = false;
                 txtProfissao.Visible = false;
                 groupBox2.Visible = false;
-                gridEndereco.Visible = false;
+                gridEnd.Visible = false;
             }
         }
 
 
         #region "Eventos"
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             var Valid = false;
 
@@ -84,11 +85,10 @@ namespace ArqStudio.View.Login
                 cpl.Profissional.CPF = txtCPF.Text;
                 Valid = Rep.incluir(cpl);
             }
-           
-            if(Valid)
+
+            if (Valid)
             {
-                MessageBox.Show("Dados inseridos com sucesso.", "",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBox.Show("Dados inseridos com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             else
@@ -98,9 +98,7 @@ namespace ArqStudio.View.Login
             }
         }
 
-        #endregion
-
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        private void btnAdicionar_Click_1(object sender, EventArgs e)
         {
             if (ValidaEndereco()) return;
 
@@ -115,7 +113,17 @@ namespace ArqStudio.View.Login
             ed.Estado = txtEstado.Text;
             ed.EnderecoProjeto = chkEndProjeto.Checked ? 'S' : 'N';
             cpl.ListaEndereco.Add(ed);
-            gridEndereco.DataSource = cpl.ListaEndereco;
+
+            DtoGridEndereco grid = new DtoGridEndereco();
+            grid.Id = gridEndereco.Count + 1;
+            grid.Rua = txtRua.Text;
+            grid.Bairro = txtBairro.Text;
+            grid.Numero = txtNumero.Text;
+            grid.Cidade = txtCidade.Text;
+            grid.Estado = txtEstado.Text;
+            gridEndereco.Add(grid);
+            gridEnd.DataSource = gridEndereco.ToList();
+
 
             ed = new Endereco();
             txtRua.Text = "";
@@ -128,9 +136,14 @@ namespace ArqStudio.View.Login
             txtEstado.Text = "";
         }
 
+        #endregion
+
+
+        #region "Validações"
+
         private bool ValidaEndereco()
         {
-            if(txtRua.Text == "")
+            if (txtRua.Text == "")
             {
                 MessageBox.Show("Informe a Rua.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
@@ -255,5 +268,17 @@ namespace ArqStudio.View.Login
             return false;
         }
 
+        #endregion
+
+        //private void gridEnd_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.KeyCode == Keys.Delete)
+        //    {
+        //        DtoGridEndereco Obj = new DtoGridEndereco();
+        //        Obj = gridEndereco.Where(x=> x.Id = int.Parse(gridEnd.CurrentRow))
+
+        //        gridEndereco.Remove()
+        //    }
+        //}
     }
 }

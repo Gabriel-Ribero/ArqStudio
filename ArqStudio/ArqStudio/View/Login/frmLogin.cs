@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View
 {
-    public partial class frmLogin : MetroFramework.Forms.MetroForm
+    public partial class frmLogin : Form
     {
 
         private bool Adm = false;
@@ -24,37 +24,14 @@ namespace ArqStudio.View
             InitializeComponent();
         }
 
-        private void btnCriarConta_Click(object sender, EventArgs e)
-        {
-            frmNovaContaCliente frm = new frmNovaContaCliente();
-            frm.Adm = Adm;
-            frm.ShowDialog();
-            frm.Dispose();
-        }
 
+        #region "Eventos"
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRecuperaSenha frm = new frmRecuperaSenha();
             frm.Adm = Adm;
             frm.ShowDialog();
             frm.Dispose();
-        }
-
-        private void btEntrar_Click(object sender, EventArgs e)
-        {
-            Usuario u = Rep.getUsuario(txtEmailUsuario.Text, txtSenha.Text);
-            if(u.IdUsuario != 0)
-            {
-                frmMenu frm = new frmMenu();
-                frm.Us = u;
-                frm.ShowDialog();
-                frm.Dispose();
-            }
-            else
-            {
-                MessageBox.Show("Usuário não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -72,5 +49,33 @@ namespace ArqStudio.View
                 return;
             }
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            Usuario u = Rep.getUsuario(txtEmailUsuario.Text, txtSenha.Text);
+            if (u.IdUsuario != 0)
+            {
+                    frmMenu frm = new frmMenu();
+                    frm.Us = u;
+                    frm.ShowDialog();
+                    frm.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnNovaConta_Click(object sender, EventArgs e)
+        {
+            frmNovaContaCliente frm = new frmNovaContaCliente();
+            frm.Adm = Adm;
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+        #endregion
+
     }
 }

@@ -31,7 +31,7 @@ namespace ArqStudio.Repository
                 }
                 dr.Close();
 
-                if(lcp.Usuario.Adm == 0)
+                if (lcp.Usuario.Adm == 0)
                 {
                     SqlConnectionExecute("Insert Into Cliente(Nome, SobreNome, RG, CPF, DataNasc, DDD, Telefone, Profissao, IdUsuario)" +
                                      $"Values ('{lcp.Cliente.Nome}', '{lcp.Cliente.SobreNome}', '{lcp.Cliente.RG}', '{lcp.Cliente.CPF}', '{lcp.Cliente.DataNasc}'," +
@@ -61,7 +61,7 @@ namespace ArqStudio.Repository
         {
             try
             {
-                if(lcp.Usuario.Adm == 0)
+                if (lcp.Usuario.Adm == 0)
                 {
                     SqlConnectionExecute($"Update Cliente Set Nome = '{lcp.Cliente.Nome}', SobreNome = '{lcp.Cliente.SobreNome}', RG = '{lcp.Cliente.RG}'," +
                                          $"CPF = '{lcp.Cliente.CPF}', DataNasc = '{lcp.Cliente.DataNasc}', DDD = '{lcp.Cliente.DDD}', Telefone = '{lcp.Cliente.Telefone}', Profissao = '{lcp.Cliente.Profissao}'" +
@@ -92,15 +92,23 @@ namespace ArqStudio.Repository
             {
                 if (!adm)
                 {
-                    SqlConnectionExecute($"Update Usuarios u Set Senha = {senha}" +
-                                         $"Inner Join Cliente c on c.IdUsuario = u.IdUsuario" +
-                                         $"Where c.CPF Like {cpf}");
+                    SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where c.CPF = {cpf}");
+                    int id = 0;
+                    if (dr.Read())
+                    {
+                        id = int.Parse(dr[0].ToString());
+                    }
+                    SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
                 }
                 else
                 {
-                    SqlConnectionExecute($"Update Usuarios u Set Senha = {senha}" +
-                                         $"Inner Join Profissional p on p.IdUsuario = u.IdUsuario" +
-                                         $"Where p.CPF Like {cpf}");
+                    SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where p.CPF = {cpf}");
+                    int id = 0;
+                    if (dr.Read())
+                    {
+                        id = int.Parse(dr[0].ToString());
+                    }
+                    SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
                 }
 
                 return true;
@@ -169,7 +177,7 @@ namespace ArqStudio.Repository
         public void SqlConnectionExecute(string query)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             sql = query;
@@ -183,7 +191,7 @@ namespace ArqStudio.Repository
         public SqlDataReader SqlConnectionRead(string query)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-J802S8K\\SQLEXPRESS; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             sql = query;

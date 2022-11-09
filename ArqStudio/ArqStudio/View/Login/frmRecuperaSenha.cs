@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View.Login
 {
-    public partial class frmRecuperaSenha : MetroFramework.Forms.MetroForm
+    public partial class frmRecuperaSenha : Form
     {
 
         LoginRep Rep = new LoginRep();
@@ -37,7 +37,6 @@ namespace ArqStudio.View.Login
             if (Valid)
             {
                 MessageBox.Show("Senha alterada com sucesso.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
                 Close();
             }
             else
@@ -55,13 +54,13 @@ namespace ArqStudio.View.Login
                 return true;
             }
 
-            if (txtConfirmSenha.Text == "")
+            if (txtSenha.Text == "")
             {
                 MessageBox.Show("Informe a Confirmação da Senha.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
 
-            if (txtNovaSenha.Text != txtConfirmSenha.Text)
+            if (txtNovaSenha.Text != txtSenha.Text)
             {
                 MessageBox.Show("As Senhas não estão iguais.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
@@ -69,5 +68,6 @@ namespace ArqStudio.View.Login
 
             return false;
         }
+
     }
 }

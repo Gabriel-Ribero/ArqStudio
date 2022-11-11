@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ArqStudio.Repository;
 using ArqStudio.Model;
+using ArqStudio.DataTransferObject.Login;
 
 namespace ArqStudio.View.Avaliação
 {
@@ -43,8 +44,9 @@ namespace ArqStudio.View.Avaliação
 
         private void frmAvaliacao_Load(object sender, EventArgs e)
         {
-            
-           // txt_cliente.Text = ra.GetCliente();
+            DtoLoginClienteProfissional lcp = new DtoLoginClienteProfissional();
+            lcp = Rep.getCliente(Us.IdUsuario);
+            txt_cliente.Text = lcp.Cliente.Nome;
             txt_cliente.ReadOnly = true;
             CarregaComboProfissional();
         }

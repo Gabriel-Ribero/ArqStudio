@@ -14,13 +14,21 @@ namespace ArqStudio.View.Login
     public partial class frmRecuperaSenha : Form
     {
 
+        #region "Atributo"
+
         LoginRep Rep = new LoginRep();
         public bool Adm;
+
+        #endregion
+
 
         public frmRecuperaSenha()
         {
             InitializeComponent();
         }
+
+
+        #region "Eventos"
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -32,7 +40,9 @@ namespace ArqStudio.View.Login
             var Valid = false;
             if (Valida()) return;
 
-            Valid = Rep.updateSenha(txtNovaSenha.Text, txtCPF.Text, Adm);
+            string cpf = txtCPF.Text.Replace(",", "-");
+
+            Valid = Rep.updateSenha(txtNovaSenha.Text, cpf, Adm);
 
             if (Valid)
             {
@@ -45,6 +55,11 @@ namespace ArqStudio.View.Login
                 return;
             }
         }
+
+        #endregion
+
+
+        #region "Validação"
 
         private bool Valida()
         {
@@ -69,5 +84,6 @@ namespace ArqStudio.View.Login
             return false;
         }
 
+        #endregion
     }
 }

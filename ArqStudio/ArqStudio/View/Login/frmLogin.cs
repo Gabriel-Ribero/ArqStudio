@@ -16,8 +16,13 @@ namespace ArqStudio.View
     public partial class frmLogin : Form
     {
 
+        #region "Propriedades"
+
         private bool Adm = false;
         LoginRep Rep = new LoginRep();
+
+        #endregion
+
 
         public frmLogin()
         {
@@ -55,10 +60,10 @@ namespace ArqStudio.View
             Usuario u = Rep.getUsuario(txtEmailUsuario.Text, txtSenha.Text);
             if (u.IdUsuario != 0)
             {
-                    frmMenu frm = new frmMenu();
-                    frm.Us = u;
-                    frm.ShowDialog();
-                    frm.Dispose();
+                frmMenu frm = new frmMenu();
+                frm.Us = u;
+                frm.ShowDialog();
+                frm.Dispose();
             }
             else
             {
@@ -76,6 +81,5 @@ namespace ArqStudio.View
         }
 
         #endregion
-
     }
 }

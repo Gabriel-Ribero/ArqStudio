@@ -16,9 +16,20 @@ namespace ArqStudio.View.Login
     public partial class frmPerfil : Form
     {
 
+        #region "Atributos"
+
         LoginRep Rep = new LoginRep();
         private Usuario us;
+
+        #endregion
+
+
+        #region "Propriedade"
+
         internal Usuario Us { get => us; set => us = value; }
+
+        #endregion
+
 
         public frmPerfil()
         {
@@ -59,6 +70,9 @@ namespace ArqStudio.View.Login
             }
             
         }
+
+
+        #region "Eventos"
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -115,5 +129,6 @@ namespace ArqStudio.View.Login
             }
         }
 
+        #endregion
     }
 }

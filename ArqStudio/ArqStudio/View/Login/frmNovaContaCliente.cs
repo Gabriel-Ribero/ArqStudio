@@ -9,17 +9,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Transactions;
 using System.Windows.Forms;
 
 namespace ArqStudio.View.Login
 {
     public partial class frmNovaContaCliente : Form
     {
+
+        #region "Atributos"
+
         private DtoLoginClienteProfissional cpl = new DtoLoginClienteProfissional();
         List<DtoGridEndereco> gridEndereco = new List<DtoGridEndereco>();
         private LoginRep Rep = new LoginRep();
-        public bool Adm; 
+        public bool Adm;
+
+        #endregion
+
 
         public frmNovaContaCliente()
         {
@@ -31,6 +36,7 @@ namespace ArqStudio.View.Login
             if (Adm)
             {
                 lblRG.Text = "CAU:";
+                txtRG.Mask = "";
                 lblDataNasc.Visible = false;
                 dtDataNascimento.Visible = false;
                 lblDDD.Visible = false;
@@ -271,7 +277,5 @@ namespace ArqStudio.View.Login
 
 
         #endregion
-
-
     }
 }

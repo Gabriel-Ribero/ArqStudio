@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -71,11 +73,11 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEnd)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,8 +89,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label1.Location = new System.Drawing.Point(39, 38);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(32, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 20);
             this.label1.TabIndex = 0;
@@ -99,8 +101,8 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label2.Location = new System.Drawing.Point(31, 89);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(31, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 23);
             this.label2.TabIndex = 1;
@@ -108,8 +110,9 @@
             // 
             // txtNome
             // 
-            this.txtNome.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtNome.ForeColor = System.Drawing.Color.White;
+            this.txtNome.BackColor = System.Drawing.Color.White;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.ForeColor = System.Drawing.Color.Black;
             this.txtNome.Location = new System.Drawing.Point(172, 33);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(231, 30);
@@ -117,9 +120,10 @@
             // 
             // txtSobreNome
             // 
-            this.txtSobreNome.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtSobreNome.ForeColor = System.Drawing.Color.White;
-            this.txtSobreNome.Location = new System.Drawing.Point(172, 86);
+            this.txtSobreNome.BackColor = System.Drawing.Color.White;
+            this.txtSobreNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSobreNome.ForeColor = System.Drawing.Color.Black;
+            this.txtSobreNome.Location = new System.Drawing.Point(172, 78);
             this.txtSobreNome.Name = "txtSobreNome";
             this.txtSobreNome.Size = new System.Drawing.Size(231, 30);
             this.txtSobreNome.TabIndex = 3;
@@ -128,8 +132,8 @@
             // 
             this.lblRG.AutoSize = true;
             this.lblRG.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRG.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lblRG.Location = new System.Drawing.Point(126, 128);
+            this.lblRG.ForeColor = System.Drawing.Color.White;
+            this.lblRG.Location = new System.Drawing.Point(123, 126);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(36, 23);
             this.lblRG.TabIndex = 4;
@@ -137,27 +141,31 @@
             // 
             // txtRG
             // 
-            this.txtRG.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtRG.ForeColor = System.Drawing.Color.White;
-            this.txtRG.Location = new System.Drawing.Point(172, 128);
+            this.txtRG.BackColor = System.Drawing.Color.White;
+            this.txtRG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRG.ForeColor = System.Drawing.Color.Black;
+            this.txtRG.Location = new System.Drawing.Point(172, 123);
+            this.txtRG.Mask = "00-000-000";
             this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(90, 30);
+            this.txtRG.Size = new System.Drawing.Size(231, 30);
             this.txtRG.TabIndex = 6;
             // 
             // txtCPF
             // 
-            this.txtCPF.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtCPF.ForeColor = System.Drawing.Color.White;
+            this.txtCPF.BackColor = System.Drawing.Color.White;
+            this.txtCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCPF.ForeColor = System.Drawing.Color.Black;
             this.txtCPF.Location = new System.Drawing.Point(172, 168);
+            this.txtCPF.Mask = "000-000-000-00";
             this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(97, 30);
+            this.txtCPF.Size = new System.Drawing.Size(231, 30);
             this.txtCPF.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(119, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 23);
@@ -168,7 +176,7 @@
             // 
             this.lblDataNasc.AutoSize = true;
             this.lblDataNasc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataNasc.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblDataNasc.ForeColor = System.Drawing.Color.White;
             this.lblDataNasc.Location = new System.Drawing.Point(6, 212);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(170, 23);
@@ -177,18 +185,21 @@
             // 
             // txtDDD
             // 
-            this.txtDDD.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtDDD.ForeColor = System.Drawing.Color.White;
+            this.txtDDD.BackColor = System.Drawing.Color.White;
+            this.txtDDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDDD.ForeColor = System.Drawing.Color.Black;
             this.txtDDD.Location = new System.Drawing.Point(172, 253);
+            this.txtDDD.Mask = "00";
             this.txtDDD.Name = "txtDDD";
-            this.txtDDD.Size = new System.Drawing.Size(29, 30);
+            this.txtDDD.Size = new System.Drawing.Size(35, 30);
             this.txtDDD.TabIndex = 12;
+            this.txtDDD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblDDD
             // 
             this.lblDDD.AutoSize = true;
             this.lblDDD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDDD.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblDDD.ForeColor = System.Drawing.Color.White;
             this.lblDDD.Location = new System.Drawing.Point(112, 253);
             this.lblDDD.Name = "lblDDD";
             this.lblDDD.Size = new System.Drawing.Size(50, 23);
@@ -197,18 +208,20 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtTelefone.ForeColor = System.Drawing.Color.White;
+            this.txtTelefone.BackColor = System.Drawing.Color.White;
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefone.ForeColor = System.Drawing.Color.Black;
             this.txtTelefone.Location = new System.Drawing.Point(172, 296);
+            this.txtTelefone.Mask = "00000-9999";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(75, 30);
+            this.txtTelefone.Size = new System.Drawing.Size(116, 30);
             this.txtTelefone.TabIndex = 14;
             // 
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
             this.lblTelefone.Location = new System.Drawing.Point(85, 296);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(77, 23);
@@ -219,7 +232,7 @@
             // 
             this.lblProfissao.AutoSize = true;
             this.lblProfissao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfissao.ForeColor = System.Drawing.Color.SpringGreen;
+            this.lblProfissao.ForeColor = System.Drawing.Color.White;
             this.lblProfissao.Location = new System.Drawing.Point(80, 338);
             this.lblProfissao.Name = "lblProfissao";
             this.lblProfissao.Size = new System.Drawing.Size(82, 23);
@@ -228,8 +241,9 @@
             // 
             // txtProfissao
             // 
-            this.txtProfissao.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtProfissao.ForeColor = System.Drawing.Color.White;
+            this.txtProfissao.BackColor = System.Drawing.Color.White;
+            this.txtProfissao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProfissao.ForeColor = System.Drawing.Color.Black;
             this.txtProfissao.Location = new System.Drawing.Point(172, 339);
             this.txtProfissao.Name = "txtProfissao";
             this.txtProfissao.Size = new System.Drawing.Size(231, 30);
@@ -237,6 +251,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.SeaGreen;
             this.groupBox1.Controls.Add(this.gridEnd);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtConfirSenha);
@@ -263,7 +278,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.SpringGreen;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(830, 511);
@@ -273,11 +288,28 @@
             // 
             // gridEnd
             // 
-            this.gridEnd.BackgroundColor = System.Drawing.Color.SpringGreen;
+            this.gridEnd.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridEnd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridEnd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEnd.GridColor = System.Drawing.Color.White;
+            this.gridEnd.GridColor = System.Drawing.Color.SeaGreen;
             this.gridEnd.Location = new System.Drawing.Point(431, 393);
             this.gridEnd.Name = "gridEnd";
+            this.gridEnd.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridEnd.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridEnd.RowHeadersWidth = 51;
             this.gridEnd.RowTemplate.Height = 24;
             this.gridEnd.Size = new System.Drawing.Size(374, 106);
@@ -303,6 +335,7 @@
             this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtRua);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(431, 28);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(374, 359);
@@ -312,9 +345,9 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnAdicionar.BackColor = System.Drawing.Color.White;
             this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionar.ForeColor = System.Drawing.Color.SeaGreen;
             this.btnAdicionar.Location = new System.Drawing.Point(259, 326);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(96, 29);
@@ -327,7 +360,7 @@
             // 
             this.chkEndProjeto.AutoSize = true;
             this.chkEndProjeto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkEndProjeto.ForeColor = System.Drawing.Color.SpringGreen;
+            this.chkEndProjeto.ForeColor = System.Drawing.Color.White;
             this.chkEndProjeto.Location = new System.Drawing.Point(13, 328);
             this.chkEndProjeto.Name = "chkEndProjeto";
             this.chkEndProjeto.Size = new System.Drawing.Size(187, 27);
@@ -339,7 +372,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(6, 293);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 23);
@@ -348,8 +381,9 @@
             // 
             // txtEstado
             // 
-            this.txtEstado.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtEstado.ForeColor = System.Drawing.Color.White;
+            this.txtEstado.BackColor = System.Drawing.Color.White;
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstado.ForeColor = System.Drawing.Color.Black;
             this.txtEstado.Location = new System.Drawing.Point(75, 290);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(280, 30);
@@ -359,8 +393,8 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label19.Location = new System.Drawing.Point(6, 249);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(4, 249);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(67, 23);
             this.label19.TabIndex = 39;
@@ -368,8 +402,9 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtCidade.ForeColor = System.Drawing.Color.White;
+            this.txtCidade.BackColor = System.Drawing.Color.White;
+            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCidade.ForeColor = System.Drawing.Color.Black;
             this.txtCidade.Location = new System.Drawing.Point(75, 246);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(280, 30);
@@ -379,7 +414,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(11, 206);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(47, 23);
@@ -388,8 +423,9 @@
             // 
             // txtLote
             // 
-            this.txtLote.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtLote.ForeColor = System.Drawing.Color.White;
+            this.txtLote.BackColor = System.Drawing.Color.White;
+            this.txtLote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLote.ForeColor = System.Drawing.Color.Black;
             this.txtLote.Location = new System.Drawing.Point(64, 203);
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(291, 30);
@@ -399,8 +435,8 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label17.Location = new System.Drawing.Point(6, 164);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(15, 165);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(71, 23);
             this.label17.TabIndex = 35;
@@ -408,19 +444,20 @@
             // 
             // txtQuadra
             // 
-            this.txtQuadra.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtQuadra.ForeColor = System.Drawing.Color.White;
-            this.txtQuadra.Location = new System.Drawing.Point(75, 161);
+            this.txtQuadra.BackColor = System.Drawing.Color.White;
+            this.txtQuadra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQuadra.ForeColor = System.Drawing.Color.Black;
+            this.txtQuadra.Location = new System.Drawing.Point(92, 161);
             this.txtQuadra.Name = "txtQuadra";
-            this.txtQuadra.Size = new System.Drawing.Size(280, 30);
+            this.txtQuadra.Size = new System.Drawing.Size(263, 30);
             this.txtQuadra.TabIndex = 36;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label16.Location = new System.Drawing.Point(10, 118);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(7, 119);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(106, 23);
             this.label16.TabIndex = 33;
@@ -428,8 +465,9 @@
             // 
             // txtLoteamento
             // 
-            this.txtLoteamento.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtLoteamento.ForeColor = System.Drawing.Color.White;
+            this.txtLoteamento.BackColor = System.Drawing.Color.White;
+            this.txtLoteamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLoteamento.ForeColor = System.Drawing.Color.Black;
             this.txtLoteamento.Location = new System.Drawing.Point(122, 115);
             this.txtLoteamento.Name = "txtLoteamento";
             this.txtLoteamento.Size = new System.Drawing.Size(233, 30);
@@ -439,8 +477,8 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label15.Location = new System.Drawing.Point(10, 77);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(10, 78);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 23);
             this.label15.TabIndex = 31;
@@ -448,8 +486,9 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtBairro.ForeColor = System.Drawing.Color.White;
+            this.txtBairro.BackColor = System.Drawing.Color.White;
+            this.txtBairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBairro.ForeColor = System.Drawing.Color.Black;
             this.txtBairro.Location = new System.Drawing.Point(75, 74);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(280, 30);
@@ -459,7 +498,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(262, 35);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(34, 23);
@@ -468,8 +507,9 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtNumero.ForeColor = System.Drawing.Color.White;
+            this.txtNumero.BackColor = System.Drawing.Color.White;
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumero.ForeColor = System.Drawing.Color.Black;
             this.txtNumero.Location = new System.Drawing.Point(302, 32);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(53, 30);
@@ -479,8 +519,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label11.Location = new System.Drawing.Point(26, 35);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(26, 36);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(43, 23);
             this.label11.TabIndex = 27;
@@ -488,8 +528,9 @@
             // 
             // txtRua
             // 
-            this.txtRua.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtRua.ForeColor = System.Drawing.Color.White;
+            this.txtRua.BackColor = System.Drawing.Color.White;
+            this.txtRua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRua.ForeColor = System.Drawing.Color.Black;
             this.txtRua.Location = new System.Drawing.Point(75, 32);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(178, 30);
@@ -497,8 +538,9 @@
             // 
             // txtConfirSenha
             // 
-            this.txtConfirSenha.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtConfirSenha.ForeColor = System.Drawing.Color.White;
+            this.txtConfirSenha.BackColor = System.Drawing.Color.White;
+            this.txtConfirSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConfirSenha.ForeColor = System.Drawing.Color.Black;
             this.txtConfirSenha.Location = new System.Drawing.Point(172, 469);
             this.txtConfirSenha.Name = "txtConfirSenha";
             this.txtConfirSenha.PasswordChar = '*';
@@ -509,7 +551,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(11, 467);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 23);
@@ -518,8 +560,9 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtSenha.ForeColor = System.Drawing.Color.White;
+            this.txtSenha.BackColor = System.Drawing.Color.White;
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.ForeColor = System.Drawing.Color.Black;
             this.txtSenha.Location = new System.Drawing.Point(172, 426);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -530,7 +573,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(100, 424);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 23);
@@ -539,8 +582,9 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(172, 383);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(231, 30);
@@ -550,7 +594,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.SpringGreen;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(100, 383);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 23);
@@ -567,20 +611,8 @@
             this.dtDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDataNascimento.Location = new System.Drawing.Point(182, 209);
             this.dtDataNascimento.Name = "dtDataNascimento";
-            this.dtDataNascimento.Size = new System.Drawing.Size(124, 30);
+            this.dtDataNascimento.Size = new System.Drawing.Size(142, 30);
             this.dtDataNascimento.TabIndex = 17;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label9.Location = new System.Drawing.Point(303, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(231, 46);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Nova Conta";
             // 
             // tableLayoutPanel1
             // 
@@ -610,7 +642,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(581, 4);
@@ -623,7 +655,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnSalvar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Location = new System.Drawing.Point(697, 4);
@@ -634,14 +666,25 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label3.Location = new System.Drawing.Point(295, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(231, 54);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Nova Conta";
+            // 
             // frmNovaContaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(836, 621);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNovaContaCliente";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
@@ -678,7 +721,6 @@
         private System.Windows.Forms.TextBox txtProfissao;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtDataNascimento;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtEmail;
@@ -709,5 +751,6 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -14,17 +14,20 @@ namespace ArqStudio.Repository
 {
     internal class LoginRep : ILogin
     {
+
+        RepositoryBase rb = new RepositoryBase(); 
+
         private string sql;
 
         public bool incluir(DtoLoginClienteProfissional lcp)
         {
             try
             {
-                SqlConnectionExecute("Insert Into Usuarios(Email, Senha, Adm)" +
+                rb.SqlConnectionExecute("Insert Into Usuarios(Email, Senha, Adm)" +
                                      $"Values ('{lcp.Usuario.Email}', '{lcp.Usuario.Senha}', '{lcp.Usuario.Adm}')");
 
                 int id = 0;
-                SqlDataReader dr = SqlConnectionRead("Select IdUsuario From Usuarios Order By IdUsuario Desc");
+                SqlDataReader dr = rb.SqlConnectionRead("Select IdUsuario From Usuarios Order By IdUsuario Desc");
                 if (dr.Read())
                 {
                     id = int.Parse(dr[0].ToString());
@@ -33,19 +36,19 @@ namespace ArqStudio.Repository
 
                 if (lcp.Usuario.Adm == 0)
                 {
-                    SqlConnectionExecute("Insert Into Cliente(Nome, SobreNome, RG, CPF, DataNasc, DDD, Telefone, Profissao, IdUsuario)" +
+                    rb.SqlConnectionExecute("Insert Into Cliente(Nome, SobreNome, RG, CPF, DataNasc, DDD, Telefone, Profissao, IdUsuario)" +
                                      $"Values ('{lcp.Cliente.Nome}', '{lcp.Cliente.SobreNome}', '{lcp.Cliente.RG}', '{lcp.Cliente.CPF}', '{lcp.Cliente.DataNasc}'," +
                                      $"'{lcp.Cliente.DDD}', '{lcp.Cliente.Telefone}', '{lcp.Cliente.Profissao}', '{id}')");
 
                     foreach (Endereco item in lcp.ListaEndereco)
                     {
-                        SqlConnectionExecute("Insert Into Endereco(Rua, Nº, Bairro, Loteamento, Quadra, Lote, Cidade, Estado, EnderecoProjeto, IdUsuario)" +
+                        rb.SqlConnectionExecute("Insert Into Endereco(Rua, Nº, Bairro, Loteamento, Quadra, Lote, Cidade, Estado, EnderecoProjeto, IdUsuario)" +
                                              $"Values ('{item.Rua}', '{item.Numero}', '{item.Bairro}', '{item.Loteamento}', '{item.Quadra}', '{item.Lote}', '{item.Cidade}', '{item.Estado}', '{item.EnderecoProjeto}', '{id}')");
                     }
                 }
                 else
                 {
-                    SqlConnectionExecute("Insert Into Profissional(Nome, SobreNome, CAU, CPF, IdUsuario)" +
+                    rb.SqlConnectionExecute("Insert Into Profissional(Nome, SobreNome, CAU, CPF, IdUsuario)" +
                                      $"Values ('{lcp.Profissional.Nome}', '{lcp.Profissional.SobreNome}', '{lcp.Profissional.CAU}', '{lcp.Profissional.CPF}', '{id}')");
                 }
 
@@ -63,13 +66,13 @@ namespace ArqStudio.Repository
             {
                 if (lcp.Usuario.Adm == 0)
                 {
-                    SqlConnectionExecute($"Update Cliente Set Nome = '{lcp.Cliente.Nome}', SobreNome = '{lcp.Cliente.SobreNome}', RG = '{lcp.Cliente.RG}'," +
+                    rb.SqlConnectionExecute($"Update Cliente Set Nome = '{lcp.Cliente.Nome}', SobreNome = '{lcp.Cliente.SobreNome}', RG = '{lcp.Cliente.RG}'," +
                                          $"CPF = '{lcp.Cliente.CPF}', DataNasc = '{lcp.Cliente.DataNasc}', DDD = '{lcp.Cliente.DDD}', Telefone = '{lcp.Cliente.Telefone}', Profissao = '{lcp.Cliente.Profissao}'" +
                                          $"Where IdUsuario = {lcp.Usuario.IdUsuario}");
                 }
                 else
                 {
-                    SqlConnectionExecute($"Update Profissional Set Nome = '{lcp.Profissional.Nome}', SobreNome = '{lcp.Profissional.SobreNome}', CAU = '{lcp.Profissional.CAU}'," +
+                    rb.SqlConnectionExecute($"Update Profissional Set Nome = '{lcp.Profissional.Nome}', SobreNome = '{lcp.Profissional.SobreNome}', CAU = '{lcp.Profissional.CAU}'," +
                                                              $"CPF = '{lcp.Profissional.CPF}'" +
                                                              $"Where IdUsuario = {lcp.Usuario.IdUsuario}");
                 }
@@ -92,23 +95,23 @@ namespace ArqStudio.Repository
             {
                 if (!adm)
                 {
-                    SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where c.CPF = {cpf}");
+                    SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where c.CPF = {cpf}");
                     int id = 0;
                     if (dr.Read())
                     {
                         id = int.Parse(dr[0].ToString());
                     }
-                    SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
+                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
                 }
                 else
                 {
-                    SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where p.CPF = {cpf}");
+                    SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where p.CPF = {cpf}");
                     int id = 0;
                     if (dr.Read())
                     {
                         id = int.Parse(dr[0].ToString());
                     }
-                    SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
+                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
                 }
 
                 return true;
@@ -121,7 +124,7 @@ namespace ArqStudio.Repository
 
         public Usuario getUsuario(string email, string senha)
         {
-            SqlDataReader dr = SqlConnectionRead($"Select * From Usuarios Where Email like '{email}' And Senha like '{senha}'");
+            SqlDataReader dr = rb.SqlConnectionRead($"Select * From Usuarios Where Email like '{email}' And Senha like '{senha}'");
 
             Usuario u = new Usuario();
             while (dr.Read())
@@ -135,7 +138,7 @@ namespace ArqStudio.Repository
 
         public DtoLoginClienteProfissional getCliente(int id)
         {
-            SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario, c.Nome, c.SobreNome, c.RG, c.CPF, c.DataNasc, c.DDD, c.Telefone, c.Profissao From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
+            SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario, c.Nome, c.SobreNome, c.RG, c.CPF, c.DataNasc, c.DDD, c.Telefone, c.Profissao From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
 
             DtoLoginClienteProfissional clp = new DtoLoginClienteProfissional();
             while (dr.Read())
@@ -156,7 +159,7 @@ namespace ArqStudio.Repository
 
         public DtoLoginClienteProfissional getProfissional(int id)
         {
-            SqlDataReader dr = SqlConnectionRead($"Select u.IdUsuario, p.Nome, p.SobreNome, p.CAU, p.CPF From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
+            SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario, p.Nome, p.SobreNome, p.CAU, p.CPF From Usuarios u Inner Join Profissional p on p.IdUsuario = u.IdUsuario Where u.IdUsuario = {id}");
 
             DtoLoginClienteProfissional clp = new DtoLoginClienteProfissional();
             while (dr.Read())
@@ -170,38 +173,5 @@ namespace ArqStudio.Repository
             dr.Close();
             return clp;
         }
-
-
-        #region "Funções"
-
-        public void SqlConnectionExecute(string query)
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
-            conn.Open();
-
-            sql = query;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = sql;
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-
-        public SqlDataReader SqlConnectionRead(string query)
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
-            conn.Open();
-
-            sql = query;
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandText = sql;
-            SqlDataReader dr = cmd.ExecuteReader();
-            return dr;
-        }
-
-        #endregion
     }
 }

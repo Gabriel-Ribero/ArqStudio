@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArqStudio.Model
 {
-    internal class Cliente
+    internal class Cliente : Usuario
     {
         private int idCliente;
         private string nome;

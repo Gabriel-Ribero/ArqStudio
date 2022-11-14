@@ -23,7 +23,7 @@ namespace ArqStudio.DataTransferObject.Login
 
         internal Usuario Usuario { get => usuario; set => usuario = value; }
         internal Cliente Cliente { get => cliente; set => cliente = value; }
-        public Profissional Profissional { get => profissional; set => profissional = value; }
+        internal Profissional Profissional { get => profissional; set => profissional = value; }
         internal List<Endereco> ListaEndereco { get => listaEndereco; set => listaEndereco = value; }
     }
 }

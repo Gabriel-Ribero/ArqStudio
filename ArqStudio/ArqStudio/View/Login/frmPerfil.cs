@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View.Login
 {
-    public partial class frmPerfil : MetroFramework.Forms.MetroForm
+    public partial class frmPerfil : Form
     {
 
         LoginRep Rep = new LoginRep();
@@ -114,5 +114,6 @@ namespace ArqStudio.View.Login
                 }
             }
         }
+
     }
 }

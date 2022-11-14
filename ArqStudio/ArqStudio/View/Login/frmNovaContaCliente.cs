@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace ArqStudio.View.Login
@@ -29,7 +30,7 @@ namespace ArqStudio.View.Login
         {
             if (Adm)
             {
-                lblRG.Text = "CAU";
+                lblRG.Text = "CAU:";
                 lblDataNasc.Visible = false;
                 dtDataNascimento.Visible = false;
                 lblDDD.Visible = false;
@@ -268,17 +269,9 @@ namespace ArqStudio.View.Login
             return false;
         }
 
+
         #endregion
 
-        //private void gridEnd_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if(e.KeyCode == Keys.Delete)
-        //    {
-        //        DtoGridEndereco Obj = new DtoGridEndereco();
-        //        Obj = gridEndereco.Where(x=> x.Id = int.Parse(gridEnd.CurrentRow))
 
-        //        gridEndereco.Remove()
-        //    }
-        //}
     }
 }

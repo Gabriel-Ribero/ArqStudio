@@ -70,6 +70,7 @@
     <Compile Include="Model\Endereco.cs" />
     <Compile Include="Model\Objeto.cs" />
     <Compile Include="Model\Profissional.cs" />
+    <Compile Include="Model\ThemeColor.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Avaliação\frmAvaliacao.resx">
       <DependentUpon>frmAvaliacao.cs</DependentUpon>
@@ -204,6 +206,16 @@
     <Content Include="obj\Debug\ArqStudio.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ArqStudio.exe" />
     <Content Include="obj\Debug\ArqStudio.pdb" />
+    <None Include="Resources\WhatsApp Image 2022-11-07 at 19.24.23.jpeg" />
+    <None Include="Resources\icons8-sair-32 %281%29.png" />
+    <None Include="Resources\icons8-sair-32.png" />
+    <None Include="Resources\icons8-perguntas-32.png" />
+    <None Include="Resources\icons8-reequilibrar-o-portfólio-32.png" />
+    <None Include="Resources\icons8-não-testado-32.png" />
+    <None Include="Resources\icons8-usuário-homem-com-círculo-32.png" />
+    <None Include="Resources\icons8-usuário-homem-com-círculo-16.png" />
+    <None Include="Resources\perfil-de-usuario %281%29.png" />
+    <None Include="Resources\perfil-de-usuario.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

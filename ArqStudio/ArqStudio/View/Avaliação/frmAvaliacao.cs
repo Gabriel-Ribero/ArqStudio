@@ -32,6 +32,8 @@ namespace ArqStudio.View.Avaliação
         public string descricao;
         public int nota;
 
+        DtoLoginClienteProfissional lcp = new DtoLoginClienteProfissional();
+
         internal Usuario Us { get => us; set => us = value; }
         internal Cliente Cliente { get => cliente; set => cliente = value; }
 
@@ -44,7 +46,6 @@ namespace ArqStudio.View.Avaliação
 
         private void frmAvaliacao_Load(object sender, EventArgs e)
         {
-            DtoLoginClienteProfissional lcp = new DtoLoginClienteProfissional();
             lcp = Rep.getCliente(Us.IdUsuario);
             txt_cliente.Text = lcp.Cliente.Nome;
             txt_cliente.ReadOnly = true;
@@ -59,8 +60,8 @@ namespace ArqStudio.View.Avaliação
 
         private void btn_avaliar_Click(object sender, EventArgs e)
         {
-            Ava.IdCliente = idCliente;
-            Ava.IdUsuario = idProfissional;
+            Ava.IdCliente = lcp.Cliente.IdCliente;
+            Ava.IdUsuario = lcp.Profissional.IdProfissional;
             Ava.Descricao = rtxt_descricao.Text;
             Ava.Nota = int.Parse(txt_nota.Text);
 

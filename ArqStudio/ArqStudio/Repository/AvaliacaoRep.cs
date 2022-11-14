@@ -15,7 +15,7 @@ namespace ArqStudio.Repository
         public void adiciona(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
             string sql = $"Insert into Avaliacao(IdCliente, IdProfissional, Descricao, Nota) " +
                 $"values ('{Ava.IdCliente}','{Ava.IdUsuario}','{Ava.Descricao}','{Ava.Nota}')";
@@ -30,7 +30,7 @@ namespace ArqStudio.Repository
         public void altera(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
             string sql = $"Update Avaliacao set IdCliente = {Ava.IdCliente}, " +
                 $"IdProfissional = {Ava.IdUsuario}, Descricao = '{Ava.Descricao}', Nota = '{Ava.Nota}' where IdAvaliacao = {Ava.IdAvaliacao}";
@@ -50,7 +50,7 @@ namespace ArqStudio.Repository
         public void exclui(Avaliacao Ava)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
             string sql = $"Delete Avaliacao where IdAvaliacao = '{Ava.IdAvaliacao}'";
 
@@ -65,7 +65,7 @@ namespace ArqStudio.Repository
         public DataSet Get(int pesquisa)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             string sql = $"select A.IdAvaliacao, C.Nome, P.Nome, A.Descricao, A.Nota" +
@@ -84,7 +84,7 @@ namespace ArqStudio.Repository
         public Avaliacao GetAvaliacao(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -108,7 +108,7 @@ namespace ArqStudio.Repository
         public IEnumerable<Objeto> GetCliente(int id)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server = DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -131,7 +131,7 @@ namespace ArqStudio.Repository
         public IEnumerable<Objeto> GetProfissional()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Server =DESKTOP-1GSUCUL; Database = ArqStudio; UID = sa; PWD = 123;";
+            conn.ConnectionString = "Server = MY_NOTEBOOK; Database = ArqStudio; UID = sa; PWD = Cap123;";
             conn.Open();
 
             SqlCommand cmd = new SqlCommand();

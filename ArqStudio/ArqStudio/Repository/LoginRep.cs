@@ -95,7 +95,7 @@ namespace ArqStudio.Repository
             {
                 if (!adm)
                 {
-                    SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where c.CPF = {cpf}");
+                    SqlDataReader dr = rb.SqlConnectionRead($"Select u.IdUsuario From Usuarios u Inner Join Cliente c on c.IdUsuario = u.IdUsuario Where c.CPF = '{cpf}'");
                     int id = 0;
                     if (dr.Read())
                     {

@@ -46,7 +46,6 @@ C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debu
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Projeto.frmProjeto.resources
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Avaliação.frmAvaliacaoPesquisa.resources
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Orcamento.frmOrcamento.resources
-C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Pergunta.frmPergunta.resources
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.frmMenu.resources
 C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Login.frmPerfil.resources
 C:\Users\arthu\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.frmMenu.resources
@@ -78,3 +77,5 @@ D:\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.csproj.Gen
 D:\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.exe
 D:\Documents\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.pdb
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Pergunta.FormVisualizacaoFormulario.resources
+C:\Users\gabri\OneDrive\Documentos\GitHub\ArqStudio\ArqStudio\ArqStudio\obj\Debug\ArqStudio.View.Pergunta.frmIncluirFormulario.resources

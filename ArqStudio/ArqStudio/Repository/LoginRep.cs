@@ -15,9 +15,7 @@ namespace ArqStudio.Repository
     internal class LoginRep : ILogin
     {
 
-        RepositoryBase rb = new RepositoryBase(); 
-
-        private string sql;
+        RepositoryBase rb = new RepositoryBase();
 
         public bool incluir(DtoLoginClienteProfissional lcp)
         {

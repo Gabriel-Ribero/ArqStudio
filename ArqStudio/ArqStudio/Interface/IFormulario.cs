@@ -15,6 +15,8 @@ namespace ArqStudio.Interface
 
         bool excluir(Formulario p);
 
+        Formulario getFormulario(int id);
+
         List<Formulario> getPerguntas(int id);
 
         List<Endereco> getEndereco(int id);

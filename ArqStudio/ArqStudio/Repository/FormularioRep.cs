@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ArqStudio.Repository
 {
@@ -30,12 +31,12 @@ namespace ArqStudio.Repository
             {
                 rb.SqlConnectionExecute("Insert Into Formulario(QuantPessoasHabitam, PessoasDeficientes, DescricaoDeficiente, AnimaisEstimacao," +
                                         "DescricaoAnimais, PessoasTrabalhaEmCasa, EstiloArquitetonico, Status, IdEndereco, IdUsuario)" +
-                                     $"Values ('{p.QuantPessoasHabitam}', '{p.PessoasDeficientes}', '{p.DescricaoDeficientes}, '{p.AnimaisEstimacao}'" +
-                                     $"'{p.DescricaoAnimais}', '{p.PessoasTrabalhaEmCasa}', '{p.EstiloArquitetonico}', '{p.Status}', '{p.IdEndereco}', '{p.IdUsuario}'')");
+                                     $"Values ({p.QuantPessoasHabitam}, {p.PessoasDeficientes}, '{p.DescricaoDeficientes}', {p.AnimaisEstimacao},'{p.DescricaoAnimais}', {p.PessoasTrabalhaEmCasa}, '{p.EstiloArquitetonico}', '{p.Status}', {p.IdEndereco}, {p.IdUsuario})");
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -54,12 +55,39 @@ namespace ArqStudio.Repository
                 ff.PessoasDeficientes = int.Parse(dr[2].ToString());
                 ff.DescricaoDeficientes = dr[3].ToString();
                 ff.AnimaisEstimacao = int.Parse(dr[4].ToString());
+                //ff.DescricaoAnimais = dr[5].ToString();
                 ff.DescricaoDeficientes = dr[5].ToString();
                 ff.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
                 ff.EstiloArquitetonico = dr[7].ToString();
+                ff.Status = dr[8].ToString();
                 ff.IdEndereco = int.Parse(dr[8].ToString());
-                ff.Status = dr[9].ToString();
+                ff.IdUsuario = int.Parse(dr[10].ToString());
                 f.Add(ff);
+            }
+            dr.Close();
+            return f;
+        }
+
+        public Formulario getFormulario(int id)
+        {
+
+            SqlDataReader dr = rb.SqlConnectionRead($"Select * From Formulario Where IdFormulario = '{id}'");
+
+            Formulario f = new Formulario();
+            if (dr.Read())
+            {
+                f.IdFormulario = int.Parse(dr[0].ToString());
+                f.QuantPessoasHabitam = int.Parse(dr[1].ToString());
+                f.PessoasDeficientes = int.Parse(dr[2].ToString());
+                f.DescricaoDeficientes = dr[3].ToString();
+                f.AnimaisEstimacao = int.Parse(dr[4].ToString());
+                //f.DescricaoAnimais = dr[5].ToString();
+                f.DescricaoDeficientes = dr[5].ToString();
+                f.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
+                f.EstiloArquitetonico = dr[7].ToString();
+                f.Status = dr[8].ToString();
+                f.IdEndereco = int.Parse(dr[9].ToString());
+                f.IdUsuario = int.Parse(dr[10].ToString());
             }
             dr.Close();
             return f;

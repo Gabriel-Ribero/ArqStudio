@@ -37,16 +37,23 @@ namespace ArqStudio.View.Pergunta
             Close();
         }
 
-        private void FormVisualizacaoPergunta_Load(object sender, EventArgs e)
+        private void CarregaGrid(int id)
         {
-            CarregaFormularios();
+            gridPerguntas.DataSource = Rep.getPerguntas(id).ToList();
         }
 
-        private void CarregaFormularios()
+        private void FormVisualizacaoPergunta_Load(object sender, EventArgs e)
         {
-            //ListaFormularios = Rep.getPerguntas(us.IdUsuario);
+            CarregaGrid(us.IdUsuario);
+        }
 
-            gridPerguntas.DataSource = ListaFormularios.ToList();
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            frmIncluirFormulario frm = new frmIncluirFormulario();
+            frm.Us = Us;
+            frm.idFormulario = int.Parse(gridPerguntas.CurrentRow.Cells[0].Value.ToString());
+            frm.ShowDialog();
+            frm.Dispose();
         }
     }
 }

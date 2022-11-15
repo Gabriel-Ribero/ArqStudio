@@ -17,6 +17,7 @@ namespace ArqStudio.View.Pergunta
         List<Endereco> ListaEndereco = new List<Endereco>();
         FormularioRep Rep = new FormularioRep();
         private Usuario us;
+        public int idFormulario;
         internal Usuario Us { get => us; set => us = value; }
 
 
@@ -28,6 +29,7 @@ namespace ArqStudio.View.Pergunta
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            idFormulario = 0;
             Close();
         }
 
@@ -60,7 +62,23 @@ namespace ArqStudio.View.Pergunta
 
         private void frmIncluirFormulario_Load(object sender, EventArgs e)
         {
-            CarregaEndereco();
+            Formulario formulario = new Formulario();
+            if (idFormulario != 0)
+            {
+                formulario = Rep.getFormulario(idFormulario);
+                spinNumeroPessoasVive.Value = formulario.QuantPessoasHabitam;
+                spinNumPessoaDeficiente.Value = formulario.PessoasDeficientes;
+                txtDescricaoDeficiente.Text = formulario.DescricaoDeficientes;
+                spinNumeroAnimais.Value = formulario.AnimaisEstimacao;
+                txtDescricaoAnimais.Text = formulario.DescricaoAnimais;
+                spinNumeroPessoasViveTrabalham.Value = formulario.PessoasTrabalhaEmCasa;
+                txtTipoArquitetonico.Text = formulario.EstiloArquitetonico;
+                CarregaEndereco();
+            }
+            else
+            {
+                CarregaEndereco();
+            }
         }
 
         private void CarregaEndereco()

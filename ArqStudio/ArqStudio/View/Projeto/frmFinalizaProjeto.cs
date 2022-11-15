@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ArqStudio.View.Projeto
 {
-    public partial class frmProjeto : Form
+    public partial class frmFinalizaProjeto : Form
     {
-        public frmProjeto()
+        public frmFinalizaProjeto()
         {
             InitializeComponent();
-        }
-
-        private void btnFinalizarProjeto_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

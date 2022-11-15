@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_sair = new System.Windows.Forms.Button();
-            this.btn_perguntas = new System.Windows.Forms.Button();
             this.btn_avaliacao = new System.Windows.Forms.Button();
             this.btn_projeto = new System.Windows.Forms.Button();
+            this.btn_perguntas = new System.Windows.Forms.Button();
             this.btn_perfil = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -86,26 +86,6 @@
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
-            // btn_perguntas
-            // 
-            this.btn_perguntas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_perguntas.FlatAppearance.BorderSize = 0;
-            this.btn_perguntas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_perguntas.ForeColor = System.Drawing.Color.White;
-            this.btn_perguntas.Image = global::ArqStudio.Properties.Resources.icons8_perguntas_321;
-            this.btn_perguntas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_perguntas.Location = new System.Drawing.Point(0, 212);
-            this.btn_perguntas.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_perguntas.Name = "btn_perguntas";
-            this.btn_perguntas.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btn_perguntas.Size = new System.Drawing.Size(267, 74);
-            this.btn_perguntas.TabIndex = 10;
-            this.btn_perguntas.Text = " Perguntas";
-            this.btn_perguntas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_perguntas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_perguntas.UseVisualStyleBackColor = true;
-            this.btn_perguntas.Click += new System.EventHandler(this.btn_perguntas_Click);
-            // 
             // btn_avaliacao
             // 
             this.btn_avaliacao.Dock = System.Windows.Forms.DockStyle.Top;
@@ -146,6 +126,26 @@
             this.btn_projeto.UseVisualStyleBackColor = true;
             this.btn_projeto.Click += new System.EventHandler(this.btn_projeto_Click);
             // 
+            // btn_perguntas
+            // 
+            this.btn_perguntas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_perguntas.FlatAppearance.BorderSize = 0;
+            this.btn_perguntas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_perguntas.ForeColor = System.Drawing.Color.White;
+            this.btn_perguntas.Image = global::ArqStudio.Properties.Resources.icons8_perguntas_321;
+            this.btn_perguntas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_perguntas.Location = new System.Drawing.Point(0, 212);
+            this.btn_perguntas.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_perguntas.Name = "btn_perguntas";
+            this.btn_perguntas.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btn_perguntas.Size = new System.Drawing.Size(267, 74);
+            this.btn_perguntas.TabIndex = 10;
+            this.btn_perguntas.Text = " Perguntas";
+            this.btn_perguntas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_perguntas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_perguntas.UseVisualStyleBackColor = true;
+            this.btn_perguntas.Click += new System.EventHandler(this.btn_perguntas_Click);
+            // 
             // btn_perfil
             // 
             this.btn_perfil.BackColor = System.Drawing.Color.SeaGreen;
@@ -170,26 +170,15 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.ForeColor = System.Drawing.Color.SeaGreen;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 138);
             this.panel2.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ArqStudio.Properties.Resources.WhatsApp_Image_2022_11_07_at_19_24_23;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 138);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // lblNome
             // 
@@ -200,11 +189,25 @@
             this.lblNome.Size = new System.Drawing.Size(0, 54);
             this.lblNome.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 29F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 66);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Arq Studio";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1445, 734);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.panel1);
@@ -217,7 +220,7 @@
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,8 +235,8 @@
         private System.Windows.Forms.Button btn_perguntas;
         private System.Windows.Forms.Button btn_avaliacao;
         private System.Windows.Forms.Button btn_projeto;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label label1;
     }
 }
 

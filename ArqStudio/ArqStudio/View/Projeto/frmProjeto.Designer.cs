@@ -29,56 +29,89 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProjeto));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.imgProjeto = new System.Windows.Forms.PictureBox();
-            this.lblNomeProjeto = new System.Windows.Forms.Label();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgProjeto)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFinalizarProjeto = new System.Windows.Forms.Button();
+            this.gridFormularios = new System.Windows.Forms.DataGridView();
+            this.btn_sair = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFormularios)).BeginInit();
             this.SuspendLayout();
             // 
-            // imgProjeto
+            // label1
             // 
-            this.imgProjeto.Location = new System.Drawing.Point(270, 77);
-            this.imgProjeto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.imgProjeto.Name = "imgProjeto";
-            this.imgProjeto.Size = new System.Drawing.Size(771, 466);
-            this.imgProjeto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgProjeto.TabIndex = 13;
-            this.imgProjeto.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(430, 54);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Formulários em Aberto";
             // 
-            // lblNomeProjeto
+            // groupBox1
             // 
-            this.lblNomeProjeto.AutoSize = true;
-            this.lblNomeProjeto.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeProjeto.Location = new System.Drawing.Point(33, 21);
-            this.lblNomeProjeto.Name = "lblNomeProjeto";
-            this.lblNomeProjeto.Size = new System.Drawing.Size(230, 38);
-            this.lblNomeProjeto.TabIndex = 14;
-            this.lblNomeProjeto.Text = "Nome do Projeto";
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btnFinalizarProjeto);
+            this.groupBox1.Location = new System.Drawing.Point(12, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1077, 50);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
             // 
-            // lblDescricao
+            // btnFinalizarProjeto
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(36, 561);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(87, 23);
-            this.lblDescricao.TabIndex = 15;
-            this.lblDescricao.Text = "Descrição:";
+            this.btnFinalizarProjeto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnFinalizarProjeto.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarProjeto.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizarProjeto.Location = new System.Drawing.Point(11, 15);
+            this.btnFinalizarProjeto.Name = "btnFinalizarProjeto";
+            this.btnFinalizarProjeto.Size = new System.Drawing.Size(127, 29);
+            this.btnFinalizarProjeto.TabIndex = 0;
+            this.btnFinalizarProjeto.Text = "Finalizar Projeto";
+            this.btnFinalizarProjeto.UseVisualStyleBackColor = false;
+            this.btnFinalizarProjeto.Click += new System.EventHandler(this.btnFinalizarProjeto_Click);
+            // 
+            // gridFormularios
+            // 
+            this.gridFormularios.BackgroundColor = System.Drawing.Color.White;
+            this.gridFormularios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFormularios.GridColor = System.Drawing.Color.White;
+            this.gridFormularios.Location = new System.Drawing.Point(12, 128);
+            this.gridFormularios.Name = "gridFormularios";
+            this.gridFormularios.RowHeadersWidth = 51;
+            this.gridFormularios.RowTemplate.Height = 24;
+            this.gridFormularios.Size = new System.Drawing.Size(1077, 410);
+            this.gridFormularios.TabIndex = 2;
+            // 
+            // btn_sair
+            // 
+            this.btn_sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_sair.BackgroundImage")));
+            this.btn_sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_sair.Location = new System.Drawing.Point(1066, 9);
+            this.btn_sair.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_sair.Name = "btn_sair";
+            this.btn_sair.Size = new System.Drawing.Size(23, 23);
+            this.btn_sair.TabIndex = 5;
+            this.btn_sair.UseVisualStyleBackColor = true;
             // 
             // frmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 711);
-            this.Controls.Add(this.lblDescricao);
-            this.Controls.Add(this.lblNomeProjeto);
-            this.Controls.Add(this.imgProjeto);
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(1101, 550);
+            this.Controls.Add(this.btn_sair);
+            this.Controls.Add(this.gridFormularios);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmProjeto";
-            ((System.ComponentModel.ISupportInitialize)(this.imgProjeto)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridFormularios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,8 +119,10 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox imgProjeto;
-        private System.Windows.Forms.Label lblNomeProjeto;
-        private System.Windows.Forms.Label lblDescricao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnFinalizarProjeto;
+        private System.Windows.Forms.DataGridView gridFormularios;
+        private System.Windows.Forms.Button btn_sair;
     }
 }

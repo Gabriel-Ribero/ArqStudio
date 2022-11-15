@@ -35,17 +35,27 @@ namespace ArqStudio.View.Pergunta
         {
             Formulario f = new Formulario();
             f.QuantPessoasHabitam = int.Parse(spinNumeroPessoasVive.Value.ToString());
-            f.PessoaDeficiente = int.Parse(spinNumPessoaDeficiente.Value.ToString());
-            f.DescricaoDeficiente = txtDescricaoDeficiente.Text;
+            f.PessoasDeficientes = int.Parse(spinNumPessoaDeficiente.Value.ToString());
+            f.DescricaoDeficientes = txtDescricaoDeficiente.Text;
             f.AnimaisEstimacao = int.Parse(spinNumeroAnimais.Value.ToString());
-            f.QuaisAnimais = txtDescricaoAnimais.Text;
-            f.PessoaTrabalhaEmCasa = int.Parse(spinNumeroPessoasViveTrabalham.Value.ToString());
+            f.DescricaoAnimais = txtDescricaoAnimais.Text;
+            f.PessoasTrabalhaEmCasa = int.Parse(spinNumeroPessoasViveTrabalham.Value.ToString());
             f.EstiloArquitetonico = txtTipoArquitetonico.Text;
             f.Status = "Pendente";
             f.IdEndereco = int.Parse(cbEnderecoProjeto.SelectedValue.ToString());
             f.IdUsuario = Us.IdUsuario;
 
-            //var Valida = 
+            var Valida = false;
+            Valida = Rep.incluir(f);
+
+            if (Valida)
+            {
+                MessageBox.Show("Dados inseridos com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Dados não inseridos! Erro.");
+            }
         }
 
         private void frmIncluirFormulario_Load(object sender, EventArgs e)

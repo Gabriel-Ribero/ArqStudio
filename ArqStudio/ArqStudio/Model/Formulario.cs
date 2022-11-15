@@ -15,7 +15,8 @@ namespace ArqStudio.Model
         private int animaisEstimacao;
         private string quaisAnimais;
         private int pessoaTrabalhaEmCasa;
-        private int estiloArquitetonico;
+        private string estiloArquitetonico;
+        private string status;
         private int idEndereco;
         private int idUsuario;
 
@@ -26,8 +27,9 @@ namespace ArqStudio.Model
         public int AnimaisEstimacao { get => animaisEstimacao; set => animaisEstimacao = value; }
         public string DescricaoAnimais { get => quaisAnimais; set => quaisAnimais = value; }
         public int PessoasTrabalhaEmCasa { get => pessoaTrabalhaEmCasa; set => pessoaTrabalhaEmCasa = value; }
-        public int EstiloArquitetonico { get => estiloArquitetonico; set => estiloArquitetonico = value; }
+        public string EstiloArquitetonico { get => estiloArquitetonico; set => estiloArquitetonico = value; }
         public int IdEndereco { get => idEndereco; set => idEndereco = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public string Status { get => status; set => status = value; }
     }
 }

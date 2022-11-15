@@ -24,34 +24,46 @@ namespace ArqStudio.Repository
             throw new NotImplementedException();
         }
 
-        bool IFormulario.incluir(Formulario p)
+        public bool incluir(Formulario p)
         {
-            throw new NotImplementedException();
+            try
+            {
+                rb.SqlConnectionExecute("Insert Into Formulario(QuantPessoasHabitam, PessoasDeficientes, DescricaoDeficiente, AnimaisEstimacao," +
+                                        "DescricaoAnimais, PessoasTrabalhaEmCasa, EstiloArquitetonico, Status, IdEndereco, IdUsuario)" +
+                                     $"Values ('{p.QuantPessoasHabitam}', '{p.PessoasDeficientes}', '{p.DescricaoDeficientes}, '{p.AnimaisEstimacao}'" +
+                                     $"'{p.DescricaoAnimais}', '{p.PessoasTrabalhaEmCasa}', '{p.EstiloArquitetonico}', '{p.Status}', '{p.IdEndereco}', '{p.IdUsuario}'')");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        //public List<Formulario> getPerguntas(int id)
-        //{
-       
-        ////    SqlDataReader dr = rb.SqlConnectionRead($"Select * From Formulario Where IdUsuario = '{id}'");
+        public List<Formulario> getPerguntas(int id)
+        {
 
-        ////    List<Formulario> f = new List<Formulario>();
-        ////    while(dr.Read())
-        ////    {
-        ////        Formulario ff = new Formulario();
-        ////        ff.IdFormulario = int.Parse(dr[0].ToString());
-        ////        ff.QuantPessoasHabitam = int.Parse(dr[1].ToString());
-        ////        ff.PessoasDeficientes = int.Parse(dr[2].ToString());
-        ////        ff.DescricaoDeficientes = dr[3].ToString();
-        ////        ff.AnimaisEstimacao = int.Parse(dr[4].ToString());
-        ////        ff.DescricaoDeficientes = dr[5].ToString();
-        ////        ff.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
-        ////        ff.EstiloArquitetonico = int.Parse(dr[7].ToString());
-        ////        ff.IdEndereco = int.Parse(dr[8].ToString());
-        ////        f.Add(ff);
-        ////    }
-        ////    dr.Close();
-        ////    return f;
-        //}
+            SqlDataReader dr = rb.SqlConnectionRead($"Select * From Formulario Where IdUsuario = '{id}'");
+
+            List<Formulario> f = new List<Formulario>();
+            while (dr.Read())
+            {
+                Formulario ff = new Formulario();
+                ff.IdFormulario = int.Parse(dr[0].ToString());
+                ff.QuantPessoasHabitam = int.Parse(dr[1].ToString());
+                ff.PessoasDeficientes = int.Parse(dr[2].ToString());
+                ff.DescricaoDeficientes = dr[3].ToString();
+                ff.AnimaisEstimacao = int.Parse(dr[4].ToString());
+                ff.DescricaoDeficientes = dr[5].ToString();
+                ff.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
+                ff.EstiloArquitetonico = dr[7].ToString();
+                ff.IdEndereco = int.Parse(dr[8].ToString());
+                ff.Status = dr[9].ToString();
+                f.Add(ff);
+            }
+            dr.Close();
+            return f;
+        }
 
         public List<Endereco> getEndereco(int id)
         {

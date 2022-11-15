@@ -105,16 +105,10 @@ namespace ArqStudio
         private void btn_avaliacao_Click(object sender, EventArgs e)
         {
             BotaoAtivo(sender);
-            if (Us.IdUsuario == 1)
-            {
-                frmAvaliacaoPesquisa fap = new frmAvaliacaoPesquisa();
-                fap.ShowDialog();
-            }
-            else
-            {
-                frmAvaliacao fa = new frmAvaliacao();
-                fa.ShowDialog();
-            }
+            frmAvaliacaoPesquisa frm = new frmAvaliacaoPesquisa();
+            frm.Us = Us;
+            frm.ShowDialog();
+            frm.Dispose();
         }
 
         private void btn_perguntas_Click(object sender, EventArgs e)

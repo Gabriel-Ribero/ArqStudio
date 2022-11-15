@@ -10,77 +10,100 @@ using System.Windows.Forms;
 using ArqStudio.Interface;
 using ArqStudio.Repository;
 using ArqStudio.Model;
+using ArqStudio.DataTransferObject.Avaliação;
 
 namespace ArqStudio.View.Avaliação
 {
-    public partial class frmAvaliacaoPesquisa : MetroFramework.Forms.MetroForm
+    public partial class frmAvaliacaoPesquisa : Form
     {
+
+        Usuario us = new Usuario();
+        internal Usuario Us { get => us; set => us = value; }
+        AvaliacaoRep Rep = new AvaliacaoRep();
+        Objeto o = new Objeto();
+        List<DtoGridAvaliacao> ListaAvaliacao = new List<DtoGridAvaliacao>();
+        List<DtoGridAvalicaoProfissional> ListaAvaliacaoProfissional = new List<DtoGridAvalicaoProfissional>();
+
         public frmAvaliacaoPesquisa()
         {
             InitializeComponent();
         }
-        Usuario us = new Usuario();
-        AvaliacaoRep ra = new AvaliacaoRep();
-        LoginRep lg = new LoginRep();
-        public int idAvaliacao;
-        private int idCliente;
 
-        internal Usuario Us { get => us; set => us = value; }
-
-        private void CarregaComboCliente()
-        {
-            cmb_pesquisa.DataSource = ra.GetCliente(idCliente);
-            cmb_pesquisa.ValueMember = "Id";
-            cmb_pesquisa.DisplayMember = "Nome";
-        }
-
-        private void CarregaGrid(int id)
-        {
-            dataGridView1.DataSource = ra.GetAvaliacao(id);
-        }
-
-        private void cmb_pesquisa_SelectedValueChanged(object sender, EventArgs e)
-        {
-            CarregaGrid((int)cmb_pesquisa.SelectedValue);
-        }
 
         private void frmAvaliacaoPesquisa_Load(object sender, EventArgs e)
-        {
-            
-            if(Us.IdUsuario == 1)
+        {  
+            if(Us.Adm == 1)
             {
-                CarregaComboCliente();
-                CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
-                lbl_pesquisa.Visible = true;
-                cmb_pesquisa.Visible = true;
+                CarregaGrid();
+                btnIncluir.Visible = false;
+                btnAlterar.Visible = false;
+                btnExcluir.Visible = false;
             }
             else
             {
-                //CarregaGrid(ra.GetAvaliacao(Us.IdUsuario));
-                cmb_pesquisa.Visible = false;
-                lbl_pesquisa.Visible = false;
-                btn_apagar.Visible = true;
+                o = Rep.getCliente(Us.IdUsuario);
+                gridAvaliacao.DataSource = Rep.getListaAvaliacao(o.Id);
             }
-            //CarregaGrid(int.Parse(cmb_pesquisa.SelectedValue.ToString()));
         }
 
-        private void btn_buscar_Click(object sender, EventArgs e)
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ra.Get(int.Parse(cmb_pesquisa.Text));
+            CarregaGrid();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnIncluir_Click(object sender, EventArgs e)
         {
-            idAvaliacao = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            frmAvaliacao frm = new frmAvaliacao();
+            frm.Us = Us;
+            frm.ShowDialog();
+            frm.Dispose();
+            gridAvaliacao.DataSource = Rep.getListaAvaliacao(o.Id);
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            frmAvaliacao frm = new frmAvaliacao();
+            frm.Us = Us;
+            frm.IdAvaliacao = int.Parse(gridAvaliacao.CurrentRow.Cells[0].Value.ToString());
+            frm.ShowDialog();
+            frm.Dispose();
+            gridAvaliacao.DataSource = Rep.getListaAvaliacao(o.Id);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var Valid = false;
+
+            Valid = Rep.deleta(int.Parse(gridAvaliacao.CurrentRow.Cells[0].Value.ToString()));
+
+            if(Valid)
+            {
+                MessageBox.Show("Avaliação deletada com sucesso.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridAvaliacao.DataSource = Rep.getListaAvaliacao(o.Id);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Erro ao deletar a avaliação", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
             Close();
         }
-        private void cmb_pesquisa_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        #region "Loads"
+
+        private void CarregaGrid()
         {
-            idCliente = int.Parse(((Cliente)cmb_pesquisa.SelectedItem).IdCliente.ToString());
-            dataGridView1.DataSource = ra.Get(idCliente).Tables[0];
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Visible = false;
-            dataGridView1.RowHeadersVisible = false;
+            ListaAvaliacaoProfissional = Rep.getListaAvaliacaoProfissional();
+            gridAvaliacao.DataSource = ListaAvaliacaoProfissional.ToList();
         }
+
+        #endregion
+
     }
 }

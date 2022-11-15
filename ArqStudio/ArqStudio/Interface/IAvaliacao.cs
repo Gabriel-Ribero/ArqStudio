@@ -4,23 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using ArqStudio.DataTransferObject.Avaliação;
 
 namespace ArqStudio.Model
 {
     internal interface IAvaliacao
     {
-        void adiciona(Avaliacao Ava);
+        bool adiciona(Avaliacao Ava);
 
-        void altera(Avaliacao Ava);
+        bool altera(Avaliacao Ava);
 
-        void deleta(Avaliacao Ava);
+        bool deleta(int IdAvaliacao);
 
-        Avaliacao GetAvaliacao(int id);
+        Avaliacao getAvaliacao(int id);
 
-        IEnumerable<Objeto> GetCliente(int id);
+        List<DtoGridAvaliacao> getListaAvaliacao(int IdCliente);
 
-        IEnumerable<Objeto> GetProfissional();
+        List<DtoGridAvalicaoProfissional> getListaAvaliacaoProfissional();
 
-        DataSet Get(int pesquisa);
+        Objeto getCliente(int id);
+
+        IEnumerable<Objeto> getProfissional();
     }
 }

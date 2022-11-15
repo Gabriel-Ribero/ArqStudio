@@ -29,6 +29,7 @@ namespace ArqStudio.View.Pergunta
             frmIncluirFormulario frm = new frmIncluirFormulario();
             frm.Us = Us;
             frm.ShowDialog();
+            CarregaGrid(us.IdUsuario);
             frm.Dispose();
         }
 
@@ -53,7 +54,27 @@ namespace ArqStudio.View.Pergunta
             frm.Us = Us;
             frm.idFormulario = int.Parse(gridPerguntas.CurrentRow.Cells[0].Value.ToString());
             frm.ShowDialog();
+            CarregaGrid(us.IdUsuario);
             frm.Dispose();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var Valid = false;
+            Valid = Rep.excluir(int.Parse(gridPerguntas.CurrentRow.Cells[0].Value.ToString()));
+            CarregaGrid(us.IdUsuario);
+
+            if (Valid)
+            {
+                MessageBox.Show("Formulario deletado com sucesso.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridPerguntas.DataSource = Rep.getPerguntas(us.IdUsuario);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Erro ao deletar o formulario", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

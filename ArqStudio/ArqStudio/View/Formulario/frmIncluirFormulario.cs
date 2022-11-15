@@ -36,28 +36,58 @@ namespace ArqStudio.View.Pergunta
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Formulario f = new Formulario();
-            f.QuantPessoasHabitam = int.Parse(spinNumeroPessoasVive.Value.ToString());
-            f.PessoasDeficientes = int.Parse(spinNumPessoaDeficiente.Value.ToString());
-            f.DescricaoDeficientes = txtDescricaoDeficiente.Text;
-            f.AnimaisEstimacao = int.Parse(spinNumeroAnimais.Value.ToString());
-            f.DescricaoAnimais = txtDescricaoAnimais.Text;
-            f.PessoasTrabalhaEmCasa = int.Parse(spinNumeroPessoasViveTrabalham.Value.ToString());
-            f.EstiloArquitetonico = txtTipoArquitetonico.Text;
-            f.Status = "Pendente";
-            f.IdEndereco = int.Parse(cbEnderecoProjeto.SelectedValue.ToString());
-            f.IdUsuario = Us.IdUsuario;
-
-            var Valida = false;
-            Valida = Rep.incluir(f);
-
-            if (Valida)
+            if (idFormulario == 0)
             {
-                MessageBox.Show("Dados inseridos com sucesso!");
+                f.QuantPessoasHabitam = int.Parse(spinNumeroPessoasVive.Value.ToString());
+                f.PessoasDeficientes = int.Parse(spinNumPessoaDeficiente.Value.ToString());
+                f.DescricaoDeficientes = txtDescricaoDeficiente.Text;
+                f.AnimaisEstimacao = int.Parse(spinNumeroAnimais.Value.ToString());
+                f.DescricaoAnimais = txtDescricaoAnimais.Text;
+                f.PessoasTrabalhaEmCasa = int.Parse(spinNumeroPessoasViveTrabalham.Value.ToString());
+                f.EstiloArquitetonico = txtTipoArquitetonico.Text;
+                f.Status = "Pendente";
+                f.IdEndereco = int.Parse(cbEnderecoProjeto.SelectedValue.ToString());
+                f.IdUsuario = Us.IdUsuario;
+
+                var Valida = false;
+                Valida = Rep.incluir(f);
+
+                if (Valida)
+                {
+                    MessageBox.Show("Dados inseridos com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Dados não inseridos! Erro.");
+                }
             }
             else
             {
-                MessageBox.Show("Dados não inseridos! Erro.");
+                f.IdFormulario = idFormulario;
+                f.QuantPessoasHabitam = int.Parse(spinNumeroPessoasVive.Value.ToString());
+                f.PessoasDeficientes = int.Parse(spinNumPessoaDeficiente.Value.ToString());
+                f.DescricaoDeficientes = txtDescricaoDeficiente.Text;
+                f.AnimaisEstimacao = int.Parse(spinNumeroAnimais.Value.ToString());
+                f.DescricaoAnimais = txtDescricaoAnimais.Text;
+                f.PessoasTrabalhaEmCasa = int.Parse(spinNumeroPessoasViveTrabalham.Value.ToString());
+                f.EstiloArquitetonico = txtTipoArquitetonico.Text;
+                f.Status = "Pendente";
+                f.IdEndereco = int.Parse(cbEnderecoProjeto.SelectedValue.ToString());
+                f.IdUsuario = Us.IdUsuario;
+
+                var Valida = false;
+                Valida = Rep.alterar(f);
+
+                if (Valida)
+                {
+                    MessageBox.Show("Dados alterados com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Dados não alterados! Erro.");
+                }
             }
+            
         }
 
         private void frmIncluirFormulario_Load(object sender, EventArgs e)

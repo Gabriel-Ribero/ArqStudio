@@ -13,7 +13,7 @@ namespace ArqStudio.Interface
 
         bool alterar(Formulario p);
 
-        bool excluir(Formulario p);
+        bool excluir(int IdFormulario);
 
         Formulario getFormulario(int id);
 

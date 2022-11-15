@@ -15,14 +15,32 @@ namespace ArqStudio.Repository
 
         private RepositoryBase rb = new RepositoryBase();
 
-        bool IFormulario.alterar(Formulario p)
+        public bool alterar(Formulario p)
         {
-            throw new NotImplementedException();
+            try
+            {
+                rb.SqlConnectionExecute($"Update Formulario Set QuantPessoasHabitam = '{p.QuantPessoasHabitam}', PessoasDeficientes = '{p.PessoasDeficientes}', DescricaoDeficiente = '{p.DescricaoDeficientes}'," +
+                                         $"AnimaisEstimacao = '{p.AnimaisEstimacao}', DescricaoAnimais = '{p.DescricaoAnimais}', PessoasTrabalhaEmCasa = '{p.PessoasTrabalhaEmCasa}', EstiloArquitetonico = '{p.EstiloArquitetonico}', Status = '{p.Status}', IdEndereco = '{p.IdEndereco}', IdUsuario = '{p.IdUsuario}'" +
+                                         $"Where IdFormulario = {p.IdFormulario}");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        bool IFormulario.excluir(Formulario p)
+        public bool excluir(int IdFormulario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                rb.SqlConnectionExecute($"Delete From Formulario Where IdFormulario = {IdFormulario}");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool incluir(Formulario p)
@@ -55,12 +73,11 @@ namespace ArqStudio.Repository
                 ff.PessoasDeficientes = int.Parse(dr[2].ToString());
                 ff.DescricaoDeficientes = dr[3].ToString();
                 ff.AnimaisEstimacao = int.Parse(dr[4].ToString());
-                //ff.DescricaoAnimais = dr[5].ToString();
-                ff.DescricaoDeficientes = dr[5].ToString();
+                ff.DescricaoAnimais = dr[5].ToString();
                 ff.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
                 ff.EstiloArquitetonico = dr[7].ToString();
                 ff.Status = dr[8].ToString();
-                ff.IdEndereco = int.Parse(dr[8].ToString());
+                ff.IdEndereco = int.Parse(dr[9].ToString());
                 ff.IdUsuario = int.Parse(dr[10].ToString());
                 f.Add(ff);
             }
@@ -81,8 +98,7 @@ namespace ArqStudio.Repository
                 f.PessoasDeficientes = int.Parse(dr[2].ToString());
                 f.DescricaoDeficientes = dr[3].ToString();
                 f.AnimaisEstimacao = int.Parse(dr[4].ToString());
-                //f.DescricaoAnimais = dr[5].ToString();
-                f.DescricaoDeficientes = dr[5].ToString();
+                f.DescricaoAnimais = dr[5].ToString();
                 f.PessoasTrabalhaEmCasa = int.Parse(dr[6].ToString());
                 f.EstiloArquitetonico = dr[7].ToString();
                 f.Status = dr[8].ToString();

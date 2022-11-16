@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ArqStudio.DataTransferObject.Projeto;
 
 namespace ArqStudio.Repository
 {
@@ -106,6 +107,33 @@ namespace ArqStudio.Repository
                 f.IdUsuario = int.Parse(dr[10].ToString());
             }
             dr.Close();
+            return f;
+        }
+
+        public List<DtoGridProjetoProfissional> getListaFormularioProfissional()
+        {
+            SqlDataReader dr = rb.SqlConnectionRead($"Select f.IdFormulario, c.Nome Cliente, f.QuantPessoasHabitam, f.PessoasDeficientes, f.DescricaoDeficiente, f.AnimaisEstimacao, f.DescricaoAnimais, f.PessoasTrabalhaEmCasa, f.EstiloArquitetonico, f.Status, e.Rua, e.Nº, e.Bairro From Formulario f Inner Join Cliente c on c.IdUsuario = f.IdUsuario Inner Join Endereco e on f.IdEndereco = e.IdEndereco Order By c.Nome");
+
+            List<DtoGridProjetoProfissional> f = new List<DtoGridProjetoProfissional>();
+            while (dr.Read())
+            {
+                DtoGridProjetoProfissional ff = new DtoGridProjetoProfissional();
+                ff.IdFormulario = int.Parse(dr[0].ToString());
+                ff.Cliente = dr[1].ToString();
+                ff.QuantPessoasHabitam = int.Parse(dr[2].ToString());
+                ff.PessoasDeficientes = int.Parse(dr[3].ToString());
+                ff.DescricaoDeficientes = dr[4].ToString();
+                ff.AnimaisEstimacao = int.Parse(dr[5].ToString());
+                ff.DescricaoAnimais = dr[6].ToString();
+                ff.PessoasTrabalhamEmCasa = int.Parse(dr[7].ToString());
+                ff.EstiloArquitetonico = dr[8].ToString();
+                ff.Status = dr[9].ToString();
+                ff.Rua = dr[10].ToString();
+                ff.Numero = int.Parse(dr[11].ToString());
+                ff.Bairro = dr[12].ToString();
+
+                f.Add(ff);
+            }
             return f;
         }
 

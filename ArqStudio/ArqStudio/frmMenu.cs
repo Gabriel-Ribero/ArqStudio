@@ -4,6 +4,7 @@ using ArqStudio.Repository;
 using ArqStudio.View.Avaliação;
 using ArqStudio.View.Login;
 using ArqStudio.View.Pergunta;
+using ArqStudio.View.Projeto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +101,10 @@ namespace ArqStudio
         private void btn_projeto_Click(object sender, EventArgs e)
         {
             BotaoAtivo(sender);
+            frmProjeto frm = new frmProjeto();
+            frm.Us = Us;
+            frm.ShowDialog();
+            frm.Dispose();
         }
 
         private void btn_avaliacao_Click(object sender, EventArgs e)

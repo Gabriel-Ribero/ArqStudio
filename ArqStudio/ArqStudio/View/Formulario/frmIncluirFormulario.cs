@@ -35,6 +35,9 @@ namespace ArqStudio.View.Pergunta
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (Valida())
+                return;
+
             Formulario f = new Formulario();
             if (idFormulario == 0)
             {
@@ -49,10 +52,10 @@ namespace ArqStudio.View.Pergunta
                 f.IdEndereco = int.Parse(cbEnderecoProjeto.SelectedValue.ToString());
                 f.IdUsuario = Us.IdUsuario;
 
-                var Valida = false;
-                Valida = Rep.incluir(f);
+                var Valid = false;
+                Valid = Rep.incluir(f);
 
-                if (Valida)
+                if (Valid)
                 {
                     MessageBox.Show("Dados inseridos com sucesso!");
                 }
@@ -118,6 +121,29 @@ namespace ArqStudio.View.Pergunta
             cbEnderecoProjeto.ValueMember = "IdEndereco";
             cbEnderecoProjeto.DisplayMember = "Rua";
             cbEnderecoProjeto.DataSource = ListaEndereco.ToList();
+        }
+
+        private bool Valida()
+        {
+            if (spinNumeroPessoasVive.Value == 0)
+            {
+                MessageBox.Show("Informe a quantidade de pessoas que vivem no local.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if (spinNumeroPessoasViveTrabalham.Value == 0)
+            {
+                MessageBox.Show("Informe a quantidade de pessoas que vivem no local e trabalham.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if(txtTipoArquitetonico.Text == "")
+            {
+                MessageBox.Show("Informe o tipo Arquitetônico do projeto.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            return false;
         }
     }
 }

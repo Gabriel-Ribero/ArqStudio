@@ -15,6 +15,7 @@ namespace ArqStudio.View.Avaliação
 {
     public partial class frmAvaliacao : Form
     {
+
         public int IdAvaliacao;
         Avaliacao altera = new Avaliacao();
         Usuario us = new Usuario();
@@ -38,6 +39,8 @@ namespace ArqStudio.View.Avaliação
         }
 
 
+        #region "Eventos"
+
         private void btn_sair_Click(object sender, EventArgs e)
         {
             Close();
@@ -45,6 +48,9 @@ namespace ArqStudio.View.Avaliação
 
         private void btn_avaliar_Click(object sender, EventArgs e)
         {
+            if (Valida())
+                return;
+
             var Valid = false;
             Objeto c = Rep.getCliente(Us.IdUsuario);
             Avaliacao a = new Avaliacao();
@@ -65,7 +71,7 @@ namespace ArqStudio.View.Avaliação
             {
                 Valid = Rep.altera(a);
             }
-            
+
 
             if (Valid)
             {
@@ -77,7 +83,7 @@ namespace ArqStudio.View.Avaliação
                 MessageBox.Show("Erro ao gravar os dados.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
         }
 
         private void btn_alterar_Click(object sender, EventArgs e)
@@ -92,6 +98,10 @@ namespace ArqStudio.View.Avaliação
             fap.ShowDialog();
         }
 
+        #endregion
+
+
+        #region "Loads / Valida"
 
         private void CarregaAvaliacao()
         {
@@ -108,5 +118,24 @@ namespace ArqStudio.View.Avaliação
             cbProfissional.ValueMember = "Id";
             cbProfissional.DisplayMember = "Nome";
         }
+
+        private bool Valida()
+        {
+            if (cbProfissional.DataSource == null)
+            {
+                MessageBox.Show("é necessário ter um profissional cadastrado. Entre em contato com o profissional.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if (rtxt_descricao.Text == "")
+            {
+                MessageBox.Show("Informe uma descrição da avaliação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }

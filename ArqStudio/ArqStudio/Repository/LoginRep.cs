@@ -99,7 +99,7 @@ namespace ArqStudio.Repository
                     {
                         id = int.Parse(dr[0].ToString());
                     }
-                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
+                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = '{senha}' Where IdUsuario = {id}");
                 }
                 else
                 {
@@ -109,7 +109,7 @@ namespace ArqStudio.Repository
                     {
                         id = int.Parse(dr[0].ToString());
                     }
-                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = {senha} Where IdUsuario = {id}");
+                    rb.SqlConnectionExecute($"Update Usuarios Set Senha = '{senha}' Where IdUsuario = {id}");
                 }
 
                 return true;

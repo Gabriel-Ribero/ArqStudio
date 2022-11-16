@@ -54,10 +54,9 @@
             this.label1.BackColor = System.Drawing.Color.SeaGreen;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 63);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(24, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Imagens:";
             // 
@@ -67,10 +66,9 @@
             this.label2.BackColor = System.Drawing.Color.SeaGreen;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(19, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 45);
+            this.label2.Size = new System.Drawing.Size(150, 54);
             this.label2.TabIndex = 2;
             this.label2.Text = "Projeto";
             // 
@@ -78,10 +76,10 @@
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncluir.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnIncluir.Location = new System.Drawing.Point(309, 233);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIncluir.Location = new System.Drawing.Point(412, 275);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(56, 19);
+            this.btnIncluir.Size = new System.Drawing.Size(75, 27);
             this.btnIncluir.TabIndex = 4;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -91,10 +89,10 @@
             // 
             this.pbImagem.BackColor = System.Drawing.Color.White;
             this.pbImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagem.Location = new System.Drawing.Point(68, 63);
-            this.pbImagem.Margin = new System.Windows.Forms.Padding(2);
+            this.pbImagem.Location = new System.Drawing.Point(91, 78);
+            this.pbImagem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbImagem.Name = "pbImagem";
-            this.pbImagem.Size = new System.Drawing.Size(298, 165);
+            this.pbImagem.Size = new System.Drawing.Size(397, 193);
             this.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagem.TabIndex = 0;
             this.pbImagem.TabStop = false;
@@ -105,19 +103,18 @@
             this.label3.BackColor = System.Drawing.Color.SeaGreen;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 292);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(24, 359);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 13);
+            this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nome do Projeto:";
             // 
             // txtNomeProjeto
             // 
-            this.txtNomeProjeto.Location = new System.Drawing.Point(107, 291);
-            this.txtNomeProjeto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeProjeto.Location = new System.Drawing.Point(160, 357);
+            this.txtNomeProjeto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeProjeto.Name = "txtNomeProjeto";
-            this.txtNomeProjeto.Size = new System.Drawing.Size(200, 20);
+            this.txtNomeProjeto.Size = new System.Drawing.Size(265, 22);
             this.txtNomeProjeto.TabIndex = 6;
             // 
             // label4
@@ -126,20 +123,19 @@
             this.label4.BackColor = System.Drawing.Color.SeaGreen;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 332);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(24, 409);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Descrição:";
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(74, 332);
-            this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescricao.Location = new System.Drawing.Point(111, 407);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(293, 74);
+            this.txtDescricao.Size = new System.Drawing.Size(389, 90);
             this.txtDescricao.TabIndex = 8;
             // 
             // label5
@@ -148,10 +144,9 @@
             this.label5.BackColor = System.Drawing.Color.SeaGreen;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(18, 262);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(24, 322);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Data Inicial:";
             // 
@@ -161,39 +156,38 @@
             this.label6.BackColor = System.Drawing.Color.SeaGreen;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(189, 262);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(252, 322);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Data Final:";
             // 
             // dtDataInicial
             // 
             this.dtDataInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataInicial.Location = new System.Drawing.Point(78, 258);
-            this.dtDataInicial.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDataInicial.Location = new System.Drawing.Point(120, 318);
+            this.dtDataInicial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDataInicial.Name = "dtDataInicial";
-            this.dtDataInicial.Size = new System.Drawing.Size(84, 20);
+            this.dtDataInicial.Size = new System.Drawing.Size(111, 22);
             this.dtDataInicial.TabIndex = 11;
             // 
             // dtDataFinal
             // 
             this.dtDataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataFinal.Location = new System.Drawing.Point(244, 258);
-            this.dtDataFinal.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDataFinal.Location = new System.Drawing.Point(343, 318);
+            this.dtDataFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDataFinal.Name = "dtDataFinal";
-            this.dtDataFinal.Size = new System.Drawing.Size(84, 20);
+            this.dtDataFinal.Size = new System.Drawing.Size(111, 22);
             this.dtDataFinal.TabIndex = 12;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnSalvar.Location = new System.Drawing.Point(309, 429);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalvar.Location = new System.Drawing.Point(412, 520);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(56, 19);
+            this.btnSalvar.Size = new System.Drawing.Size(75, 31);
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -203,10 +197,10 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelar.Location = new System.Drawing.Point(244, 429);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(325, 520);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(56, 19);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 31);
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -216,9 +210,10 @@
             // 
             this.btn_sair.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_sair.BackgroundImage")));
             this.btn_sair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_sair.Location = new System.Drawing.Point(392, 7);
+            this.btn_sair.Location = new System.Drawing.Point(523, 9);
+            this.btn_sair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(17, 19);
+            this.btn_sair.Size = new System.Drawing.Size(23, 23);
             this.btn_sair.TabIndex = 15;
             this.btn_sair.UseVisualStyleBackColor = true;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
@@ -229,10 +224,10 @@
             // 
             // frmFinalizaProjeto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(418, 457);
+            this.ClientSize = new System.Drawing.Size(557, 562);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -249,7 +244,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbImagem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmFinalizaProjeto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFinalizaProjeto";

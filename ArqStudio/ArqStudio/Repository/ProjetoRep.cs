@@ -14,12 +14,15 @@ namespace ArqStudio.Repository
     {
         private RepositoryBase rb = new RepositoryBase();
 
-        public bool incluir(Projetos p)
+        public bool incluir(Projetos p, Formulario f)
         {
             try
             {
                 rb.SqlConnectionExecute("Insert Into Projeto(Descricao, NomeProjeto, DataInicio, DataConclusao, IdFormulario)" +
                                      $"Values ('{p.Descricao}', '{p.NomeProjeto}', '{p.DataInicio}', '{p.DataConclusao}',{p.IdFormulario})");
+
+                rb.SqlConnectionExecute($"Update Formulario Set Status = '{f.Status}' Where IdFormulario = {p.IdFormulario}");
+
                 return true;
             }
             catch (Exception ex)

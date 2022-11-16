@@ -59,6 +59,7 @@ namespace ArqStudio.View.Login
                 txtRG.Text = lcp.Profissional.CAU;
                 txtCPF.Text = lcp.Profissional.CPF;
                 lblRG.Text = "CAU";
+                txtRG.Mask = "";
                 lblDataNasc.Visible = false;
                 dtDataNasc.Visible = false;
                 lblDDD.Visible = false;

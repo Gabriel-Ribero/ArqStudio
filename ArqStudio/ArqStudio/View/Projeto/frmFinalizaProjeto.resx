@@ -121,10 +121,13 @@
   <data name="btn_sair.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rAAAAKwBhgk01AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACZSURBVEhLYxgF
+        qwAAAKsB1E2SqwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACZSURBVEhLYxgF
         o2BogzwgdoMwcYJaIDaDMEkHII0vgNgDzMMEPUB8Coj5wTwygREQPwdiXzAPAdqA+CwQC4F5FAJ0S6hq
         OAzAgms1EIOCRQCIqQ4WA/F/IA4D86gMYMHiDMTY4oQigB7muCKeLIArQqliSQUQnwRiXOncFIhBEW8M
         5pEBtICYD8LECdSAmKrJdRSMAnTAwAAAuHYZ1HA4tWwAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="ofdIncluir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

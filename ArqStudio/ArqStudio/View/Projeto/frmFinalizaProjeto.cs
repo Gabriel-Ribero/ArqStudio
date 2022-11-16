@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ArqStudio.View.Projeto;
 using System.Data.SqlClient;
+using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace ArqStudio.View.Projeto
 {
@@ -43,6 +45,7 @@ namespace ArqStudio.View.Projeto
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (Valida()) return;
             Projetos p = new Projetos();
             //MemoryStream memory = new MemoryStream();
 
@@ -56,10 +59,13 @@ namespace ArqStudio.View.Projeto
             p.DataConclusao = dtDataFinal.Value;
             p.IdFormulario = idProjeto;
 
-            var Valida = false;
-            Valida = Rep.incluir(p);
+            Formulario f = new Formulario();
+            f.Status = "Finalizado";
 
-            if (Valida)
+            var Valid = false;
+            Valid = Rep.incluir(p, f);
+
+            if (Valid)
             {
                 MessageBox.Show("Projeto finalizado com sucesso!");
             }
@@ -72,7 +78,7 @@ namespace ArqStudio.View.Projeto
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             ofdIncluir.Title = "Selecionar Foto";
-            ofdIncluir.Filter = "Imagem|*.png|*.jpg";
+            //ofdIncluir.Filter = "Imagem|*.png|*.jpg";
             if (ofdIncluir.ShowDialog() == DialogResult.OK)
             {
                 string foto = ofdIncluir.FileName;
@@ -107,8 +113,33 @@ namespace ArqStudio.View.Projeto
                     dtDataFinal.Enabled = false;
                     txtNomeProjeto.ReadOnly = true;
                     txtDescricao.ReadOnly = true;
+                    btnSalvar.Visible = false;
+                    btnCancelar.Visible = false;
                 }
             }
+        }
+
+        private bool Valida()
+        {
+            if (dtDataInicial.Value > dtDataFinal.Value)
+            {
+                MessageBox.Show("A data inicial não pode ser maior que a data final do projeto.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if (txtNomeProjeto.Text == "")
+            {
+                MessageBox.Show("Informe o nome do Projeto.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            if (txtDescricao.Text == "")
+            {
+                MessageBox.Show("Informe a descrição do projeto.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+
+            return false;
         }
     }
 }
